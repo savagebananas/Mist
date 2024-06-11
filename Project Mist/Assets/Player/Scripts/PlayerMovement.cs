@@ -25,37 +25,33 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        #region Jumping
+        Jumping();
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        // Jump
-        if (Input.GetButtonDown("Jump") && isGrounded) 
-        {
-            verticalVelocity.y = jumpVelocity; // set initial velocity (pos)
-        }
-
-        // In the air, enable gravity
-        if (!isGrounded) 
-        {
-            verticalVelocity.y += GRAVITY * Time.deltaTime;
-        }
-
-        controller.Move(verticalVelocity * Time.deltaTime);
-
-        #endregion
-
-        #region Moving left and right
-
+        // Moving left and right
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 moveVector = (transform.right * x) + (transform.forward * z);
         
         controller.Move(moveVector * speed * Time.deltaTime);
+    }
 
+    private void Jumping()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        #endregion
+        // Jump
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            verticalVelocity.y = jumpVelocity; // set initial velocity (pos)
+        }
 
+        // In the air, enable gravity
+        if (!isGrounded)
+        {
+            verticalVelocity.y += GRAVITY * Time.deltaTime;
+        }
+
+        controller.Move(verticalVelocity * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
