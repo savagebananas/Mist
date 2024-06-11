@@ -19,7 +19,7 @@ public class SelectionManager : MonoBehaviour
         {
             var selection = hit.transform;
 
-            // Raycast Hit but it is a different object from current
+            // DESELECT: Raycast Hit but it is a different object from current
             if (selection != currentSelection && currentSelection != null) DeselectCurrent();
 
             // Interaction Distance Checks
@@ -29,19 +29,14 @@ public class SelectionManager : MonoBehaviour
             if (selection.CompareTag(interactableTag))
             {
                 // Highlight object
-                var selectionRenderer = selection.GetComponent<Renderer>();
-                if (selectionRenderer != null)
-                {
-                    HighlightObject highlightObject = selection.GetComponent<HighlightObject>();
-                    highlightObject?.Invoke(nameof(highlightObject.Highlight), 0);
-                }
-                else Debug.LogError("No Renderer on selected object!");
+                HighlightObject highlightObject = selection.GetComponent<HighlightObject>();
+                highlightObject?.Invoke(nameof(highlightObject.Highlight), 0);
 
                 currentSelection = selection;
             }
         }
 
-        // Raycast did not hit & an item is selected
+        // DESELECT: Raycast did not hit & an item is selected
         else if (currentSelection != null)
         {
             DeselectCurrent();
