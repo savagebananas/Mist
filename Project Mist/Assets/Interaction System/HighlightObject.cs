@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class HighlightObject : MonoBehaviour
+{
+    public Color highlightedColor = Color.white;
+    static float intensity = 0.25f;
+
+    [SerializeField] private List<Renderer> renderers;
+    List<Material> materials;
+
+    void Start()
+    {
+        materials = new List<Material>();
+        foreach (var renderer in renderers)
+        {
+            //A single child-object might have mutliple materials on it
+            //that is why we need to all materials with "s"
+            materials.AddRange(new List<Material>(renderer.materials));
+        }
+    }
+
+    public void Highlight()
+    {
+        foreach (var material in materials)
+        {
+            //We need to enable the EMISSION
+            material.EnableKeyword("_EMISSION");
+            //before we can set the color
+            material.SetColor("_EmissionColor", highlightedColor * intensity);
+        }
+    }
+
+    public void DeHighlight()
+    {
+        foreach(var material in materials)
+        {
+            material.DisableKeyword("_EMISSION");
+        }
+    }
+}
