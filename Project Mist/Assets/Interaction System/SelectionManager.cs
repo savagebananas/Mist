@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
@@ -50,5 +51,10 @@ public class SelectionManager : MonoBehaviour
         highlightObject?.Invoke(nameof(highlightObject.DeHighlight), 0);
 
         currentSelection = null;
+    }
+
+    public GameObject GetSelectedObject()
+    {
+        return currentSelection.gameObject;
     }
 }

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void OnInteract()
-    {
+    /// <summary>
+    /// Called when the player interacts with an interactable
+    /// </summary>
+    public void OnInteract();
 
-    }
+    /// <summary>
+    /// Called when player finishes the interaction
+    /// </summary>
+    public void OnInteractExit();
 }
