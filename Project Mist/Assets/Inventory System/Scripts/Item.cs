@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class StashableItem : MonoBehaviour, IInteractable
+public class Item : MonoBehaviour, IInteractable
 {
-    public void OnInteract()
+    [SerializeField] ItemData itemData;
+
+    public void OnInteract(PlayerInteractor player)
     {
         Debug.Log("Pickup item");
+        player.GetComponentInChildren<InventoryManager>().inventory.AddToInventory(itemData, 1);
         Destroy(gameObject);
     }
 

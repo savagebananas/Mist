@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerInteraction))]
+[RequireComponent(typeof(PlayerInteractor))]
 public class PlayerInput : MonoBehaviour
 {
-    private PlayerInteraction playerInteraction;
+    private PlayerInteractor playerInteraction;
 
     void Start()
     {
-        playerInteraction = GetComponent<PlayerInteraction>();
+        playerInteraction = GetComponent<PlayerInteractor>();
     }
 
     // Update is called once per frame

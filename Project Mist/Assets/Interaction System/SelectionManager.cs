@@ -57,4 +57,9 @@ public class SelectionManager : MonoBehaviour
     {
         return currentSelection.gameObject;
     }
+
+    public bool HasSelectedObject()
+    {
+        return currentSelection != null;
+    }
 }
