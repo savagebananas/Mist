@@ -1040,7 +1040,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpVelocity: 4
-  groundDistance: 0.3
+  gravityMultiplier: 1.25
+  jumpOffset: 0.3
+  groundDistance: 0.01
   groundCheck: {fileID: 742101484}
   groundMask:
     serializedVersion: 2
