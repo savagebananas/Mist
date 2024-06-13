@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu]
 public class InventoryData : ScriptableObject
@@ -9,13 +10,7 @@ public class InventoryData : ScriptableObject
     [SerializeField]
     public List<InventorySlot> iSlots = new List<InventorySlot>();
 
-    public void InitializeSlots()
-    {
-        for (int i = 0; i < iSlots.Count; i++)
-        {
-            iSlots[i] = new InventorySlot(null, 0);
-        }
-    }
+    public UnityEvent OnInventoryChanged;
 
     public void AddToInventory(ItemData item, int amountToAdd)
     {
@@ -32,6 +27,7 @@ public class InventoryData : ScriptableObject
                 if (iSlots[i].HasEnoughRoomLeftInStack(amt))
                 {
                     iSlots[i].AddAmount(amt);
+                    OnInventoryChanged.Invoke(); // Call event
                     return;
                 }
                 // Case 2: Can partially stack item
@@ -48,7 +44,12 @@ public class InventoryData : ScriptableObject
         // Find Empty Slot
         for (int i = 0; i < iSlots.Count; i++)
         {
-            if (amt <= 0) return;
+            if (amt <= 0)
+            {
+                OnInventoryChanged.Invoke(); // Call event
+                return;
+            }
+
             // Empty Slot
             if (iSlots[i].itemData == null)
             {
@@ -57,6 +58,7 @@ public class InventoryData : ScriptableObject
                 {
                     iSlots[i].itemData = item;
                     iSlots[i].AddAmount(amt);
+                    OnInventoryChanged.Invoke(); // Call event
                     return;
                 }
                 // Case 2: Can partially stack item on empty slot
@@ -71,6 +73,11 @@ public class InventoryData : ScriptableObject
         }
 
         Debug.LogError("Inventory Full, Can't add " + amt + " of " + item.name);
+    }
+
+    public int GetInventorySize()
+    {
+        return iSlots.Count;
     }
 
     public void ClearInventory()
