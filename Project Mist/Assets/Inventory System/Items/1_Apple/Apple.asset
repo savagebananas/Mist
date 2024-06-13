@@ -15,5 +15,5 @@ MonoBehaviour:
   id: 1
   name: Apple
   description: 
-  maxStackSize: 2
-  itemImage: {fileID: 0}
+  maxStackSize: 5
+  itemImage: {fileID: 21300000, guid: 3a8c21230d8f09648931888ed1fbd707, type: 3}

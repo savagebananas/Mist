@@ -23,21 +23,14 @@ public class InventoryData : ScriptableObject
             // There is a matching item
             if (iSlots[i].itemData == item)
             {
-                // Case 1: Can fully stack item on pre-existing
-                if (iSlots[i].HasEnoughRoomLeftInStack(amt))
+                iSlots[i].AddAmount(amt, out int remaining);
+
+                if (remaining == 0)
                 {
-                    iSlots[i].AddAmount(amt);
-                    OnInventoryChanged.Invoke(); // Call event
+                    OnInventoryChanged.Invoke();
                     return;
                 }
-                // Case 2: Can partially stack item
-                else if (!iSlots[i].IsFull())
-                {
-                    int amtToFull = maxStackSize - iSlots[i].quantity;
-                    iSlots[i].AddAmount(amtToFull);
-                    amt -= amtToFull;
-                }
-                // Else: item slot is full
+                amt = remaining;
             }
         }
 
@@ -53,26 +46,26 @@ public class InventoryData : ScriptableObject
             // Empty Slot
             if (iSlots[i].itemData == null)
             {
-                // Case 1: Can fully stack item on empty slot
-                if (amt < item.maxStackSize)
+                iSlots[i].itemData = item;
+                iSlots[i].AddAmount(amt, out int remaining);
+                
+                if (remaining == 0)
                 {
-                    iSlots[i].itemData = item;
-                    iSlots[i].AddAmount(amt);
-                    OnInventoryChanged.Invoke(); // Call event
+                    OnInventoryChanged.Invoke();
                     return;
                 }
-                // Case 2: Can partially stack item on empty slot
-                else
-                {
-                    iSlots[i].itemData = item;
-                    int amtToFull = maxStackSize - iSlots[i].quantity;
-                    iSlots[i].AddAmount(amtToFull);
-                    amt -= amtToFull;
-                }
+
+                amt = remaining;
             }
         }
 
         Debug.LogError("Inventory Full, Can't add " + amt + " of " + item.name);
+    }
+
+    public void RemoveFromInventory(InventorySlot slot)
+    {
+        slot.ClearSlot();
+        OnInventoryChanged.Invoke();
     }
 
     public int GetInventorySize()
@@ -111,9 +104,21 @@ public class InventorySlot
         return quantity + amtToAdd < itemData.maxStackSize;
     }
 
-    public void AddAmount(int amt)
+    public void AddAmount(int amt, out int remaining)
     {
-        quantity += amt;
+        // Adding will cause overflow
+        if (itemData.maxStackSize - quantity < amt)
+        {
+            int amtToAdd = itemData.maxStackSize - quantity;
+            quantity += amtToAdd;
+            remaining = amt - amtToAdd;
+        }
+        else
+        {
+            quantity += amt;
+            remaining = 0;
+        }
+
         CheckForError();
     }
 

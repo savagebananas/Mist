@@ -6,34 +6,37 @@ using UnityEngine.UI;
 using TMPro;
 using System.Runtime.CompilerServices;
 
-
+[RequireComponent(typeof(Button))]
 public class InventorySlotUI : MonoBehaviour
 {
-    [SerializeField] ItemData itemData;
-    [SerializeField] int quantity;
+    public InventoryUI parentDisplay;
 
-    InventorySlot slotBackend;
-
+    // Frontend
     [SerializeField] private Image itemSprite;
     [SerializeField] private TextMeshProUGUI itemCountText;
+    private Button button;
 
+    // Backend
+    InventoryData inventory; // the inventory the slot is in
+    InventorySlot slot; // slot in backend
+
+    private void Awake()
+    {
+        button = GetComponent<Button>();
+        button?.onClick.AddListener(OnUISlotClick);
+    }
 
     public void UpdateUISlot(InventorySlot slot)
     {
-        // if nothing changed, exit
-        if (itemData == slot.itemData && quantity == slot.quantity) return;
+        // Data
+        this.slot = slot;
 
-        // else, update slot
-        itemData = slot.itemData;
-        quantity = slot.quantity;
-        UpdateSlotVisuals();
-    }
+        if (slot.itemData == null) return;
 
-    private void UpdateSlotVisuals()
-    {
-        itemSprite.sprite = itemData.itemImage;
+        // Visuals
         itemSprite.color = Color.white;
-        itemCountText.text = quantity.ToString();
+        itemSprite.sprite = slot.itemData.itemImage;
+        itemCountText.text = slot.quantity.ToString();
     }
 
     public void ClearUISlot()
@@ -41,7 +44,16 @@ public class InventorySlotUI : MonoBehaviour
         itemSprite.color = Color.clear;
         itemSprite.sprite = null;
         itemCountText.text = "";
-        slotBackend.ClearSlot();
+    }
+
+    public bool SlotEmpty()
+    {
+        return slot.itemData == null;
+    }
+
+    public void OnUISlotClick()
+    {
+        parentDisplay?.SlotClicked(this);
     }
 
 }

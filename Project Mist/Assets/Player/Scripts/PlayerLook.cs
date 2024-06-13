@@ -8,6 +8,8 @@ public class PlayerLook : MonoBehaviour
     public Camera cam;
     public float sensitivity;
 
+    private bool canLookAround = true;
+
     float xRotation;
     float yRotation;
 
@@ -20,6 +22,8 @@ public class PlayerLook : MonoBehaviour
 
     void Update()
     {
+        if (!canLookAround) return;
+
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
@@ -32,5 +36,11 @@ public class PlayerLook : MonoBehaviour
 
         player.transform.localRotation = Quaternion.Euler(0, yRotation, 0);
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+    }
+
+    public void ChangeActiveState()
+    {
+        if (canLookAround) canLookAround = false;
+        else canLookAround = true;
     }
 }

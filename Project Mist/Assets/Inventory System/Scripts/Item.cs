@@ -9,7 +9,7 @@ public class Item : MonoBehaviour, IInteractable
 
     public void OnInteract(PlayerInteractor player)
     {
-        Debug.Log("Pickup item");
+        Debug.Log("Pickup item: " + itemData.name);
         player.GetComponentInChildren<InventoryHolder>().inventory.AddToInventory(itemData, 1);
         Destroy(gameObject);
     }
