@@ -6,7 +6,6 @@ using UnityEngine;
 public class InventoryHolder : MonoBehaviour
 {
     public InventoryData inventory;
-    public ItemData testItem;
 
     private void Start()
     {

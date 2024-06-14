@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2da2b590a2ca004186da9e476148786, type: 3}
   m_Name: Inventory_Hotbar_Player1
   m_EditorClassIdentifier: 
-  <size>k__BackingField: 10
+  iSlots:
+  - itemData: {fileID: 0}
+    quantity: 0
+  - itemData: {fileID: 0}
+    quantity: 0
+  - itemData: {fileID: 0}
+    quantity: 0
+  - itemData: {fileID: 0}
+    quantity: 0
+  - itemData: {fileID: 0}
+    quantity: 0
+  OnInventoryChanged:
+    m_PersistentCalls:
+      m_Calls: []

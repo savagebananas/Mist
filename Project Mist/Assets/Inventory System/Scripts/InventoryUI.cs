@@ -26,7 +26,8 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < inventory.GetInventorySize(); i++)
         {
             var uiSlot = Instantiate(slotUIPrefab, transform);
-            uiSlot.parentDisplay = this;    
+            uiSlot.parentDisplay = this;
+            uiSlot.UpdateUISlot(inventory.iSlots[i]);
             slotDictionary.Add(uiSlot, inventory.iSlots[i]);
         }
     }
