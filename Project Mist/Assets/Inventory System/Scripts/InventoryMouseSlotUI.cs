@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryMouseSlotUI : MonoBehaviour
@@ -10,19 +11,33 @@ public class InventoryMouseSlotUI : MonoBehaviour
     [SerializeField] private Image itemSprite;
     [SerializeField] private TextMeshProUGUI itemCountText;
 
-    private ItemData item;
+    private ItemData itemData;
     private int quantity;
 
     private Vector2 offset = new Vector2 (10, -10);
 
     bool isActive = false;
-    
+
+    public ItemSpawnManager itemSpawnManager;
+
     private void Update()
     {
-        if (isActive)
+
+        if (itemData != null)
         {
+            // Follow mouse
             transform.position = Input.mousePosition + (Vector3) offset;
-            if (item == null) SetInactive();
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                // If not over UI
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    // Drop item
+                    itemSpawnManager.SpawnItem(itemData, quantity);
+                    Clear();
+                }
+            }
         }
 
         
@@ -30,55 +45,27 @@ public class InventoryMouseSlotUI : MonoBehaviour
 
     public void SetItem(ItemData itemData, int amt)
     {
-        this.item = itemData;
+        this.itemData = itemData;
         quantity = amt;
         UpdateVisuals();
-        SetActive();
-    }
-
-    private void UpdateVisuals()
-    {
-        itemSprite.sprite = item.itemImage;
-        itemCountText.text = quantity.ToString();
-    }
-
-    /// <summary>
-    /// Update Visuals and make slot item appear
-    /// </summary>
-    public void SetActive()
-    {
-        itemSprite.color =  Color.white;
-        isActive = true;
-    }
-
-    public void SetInactive()
-    {
-        itemSprite.color = Color.clear;
-        isActive = true;
     }
 
     public void Clear()
     {
         // Clear data
-        item = null;
+        itemData = null;
         quantity = 0;
-
-        // Clear visuals
-        itemSprite.color = Color.clear;
-        itemSprite.sprite = null;
-        itemCountText.text = "";
-
-        SetInactive();
+        UpdateVisuals();
     }
 
     public bool SlotEmpty()
     {
-        return item == null;
+        return itemData == null;
     }
 
     public ItemData GetItemData()
     {
-        return item;
+        return itemData;
     }
 
     public int GetQuantity()
@@ -90,5 +77,22 @@ public class InventoryMouseSlotUI : MonoBehaviour
     {
         this.quantity = quantity;
         UpdateVisuals();
+    }
+
+    private void UpdateVisuals()
+    {
+        if (itemData == null)
+        {
+            // Clear visuals
+            itemSprite.color = Color.clear;
+            itemSprite.sprite = null;
+            itemCountText.text = "";
+            return;
+        }
+
+        // Else
+        itemSprite.color = Color.white;
+        itemSprite.sprite = itemData.itemImage;
+        itemCountText.text = quantity.ToString();
     }
 }

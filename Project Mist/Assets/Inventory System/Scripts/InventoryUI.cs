@@ -32,9 +32,10 @@ public class InventoryUI : MonoBehaviour
     }
 
     /// <summary>
-    /// All slot button clicks will lead here
+    /// All slot button clicks will lead here.
+    /// Logic for transfering items between mouse and slot.
     /// </summary>
-    /// <param name="slotUI"></param>
+    /// <param name="slotUI"> The slot being clicked </param>
     public void SlotClicked(InventorySlotUI slotUI)
     {
         InventorySlot slot = slotDictionary[slotUI];
@@ -47,7 +48,7 @@ public class InventoryUI : MonoBehaviour
             mouseSlotUI.SetItem(slot.itemData, slot.quantity);
 
             // Clear backend and front end slots
-            slotUI.ClearUISlot();
+            slotUI.ClearSlotVisuals();
             slot.ClearSlot();
         }
 

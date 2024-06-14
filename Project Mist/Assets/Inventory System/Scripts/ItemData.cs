@@ -10,4 +10,7 @@ public class ItemData : ScriptableObject
     [SerializeField] public string description;
     [SerializeField] public int maxStackSize;
     [SerializeField] public Sprite itemImage;
+
+    [Header("Prefab must include DroppedItem.cs")]
+    public GameObject droppedItem;
 }

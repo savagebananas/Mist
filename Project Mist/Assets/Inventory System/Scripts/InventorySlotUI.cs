@@ -31,7 +31,11 @@ public class InventorySlotUI : MonoBehaviour
         // Data
         this.slot = slot;
 
-        if (slot.itemData == null) return;
+        if (slot.itemData == null)
+        {
+            ClearSlotVisuals();
+            return;
+        }
 
         // Visuals
         itemSprite.color = Color.white;
@@ -39,7 +43,7 @@ public class InventorySlotUI : MonoBehaviour
         itemCountText.text = slot.quantity.ToString();
     }
 
-    public void ClearUISlot()
+    public void ClearSlotVisuals()
     {
         itemSprite.color = Color.clear;
         itemSprite.sprite = null;
