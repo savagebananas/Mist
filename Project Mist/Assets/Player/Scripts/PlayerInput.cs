@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-[RequireComponent(typeof(PlayerInteractor))]
+[RequireComponent(typeof(PlayerInteractor), typeof(PlayerEquip))]
 public class PlayerInput : MonoBehaviour
 {
+    public static bool active = true;
+
     private PlayerInteractor playerInteraction;
     private PlayerLook playerLook;
+    private PlayerEquip playerEquip;
 
     public UnityEvent ChangeInventoryUIState;
 
@@ -16,11 +19,15 @@ public class PlayerInput : MonoBehaviour
     {
         playerInteraction = GetComponent<PlayerInteractor>();
         playerLook = GetComponent<PlayerLook>();
+        playerEquip = GetComponent<PlayerEquip>();
+
         ChangeInventoryUIState.AddListener(GameObject.Find("UIController").GetComponent<UIController>().UpdateInventoryState);
     }
 
     void Update()
     {
+        if (!active) return;
+
         if (Input.GetButtonDown("Interact"))
         {
             playerInteraction.Interact();
@@ -31,6 +38,33 @@ public class PlayerInput : MonoBehaviour
         {
             ChangeInventoryUIState.Invoke();
             playerLook.ChangeActiveState();
+        } 
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            playerEquip.EquipItem(0);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            playerEquip.EquipItem(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            playerEquip.EquipItem(2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            playerEquip.EquipItem(3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            playerEquip.EquipItem(4);
+        }
+
+
     }
 }

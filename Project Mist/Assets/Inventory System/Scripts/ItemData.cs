@@ -13,4 +13,7 @@ public class ItemData : ScriptableObject
 
     [Header("Prefab must include DroppedItem.cs")]
     public GameObject droppedItem;
+
+    [Header("Prefab must include IEquippable.cs")]
+    public GameObject equippedItem;
 }

@@ -18,3 +18,4 @@ MonoBehaviour:
   maxStackSize: 1
   itemImage: {fileID: 21300000, guid: 51813b12468c4804f933ae23563cd3f7, type: 3}
   droppedItem: {fileID: 2856639346266646779, guid: 72e4a79a691409e47b3f8e8cb055aa1f, type: 3}
+  equippedItem: {fileID: 4222846780943553891, guid: 86e1180edbf01da4e832edffbe6a07ef, type: 3}
