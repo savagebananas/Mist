@@ -68,6 +68,14 @@ public class InventoryData : ScriptableObject
         OnInventoryChanged.Invoke();
     }
 
+    public void RemoveFromInventory(int index)
+    {
+        InventorySlot slot = iSlots[index];
+        slot.ClearSlot();
+        OnInventoryChanged.Invoke();
+    }
+
+
     public int GetInventorySize()
     {
         return iSlots.Count;

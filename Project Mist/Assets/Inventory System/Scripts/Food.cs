@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Food : MonoBehaviour, IEquippable
+{
+
+    public void UseItem()
+    {
+        Debug.Log("Eat");
+    }
+
+    public void DropItem(InventoryData hotbar, ItemSpawnManager itemSpawnManager)
+    {
+        throw new System.NotImplementedException();
+    }
+
+}

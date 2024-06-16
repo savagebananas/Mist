@@ -19,6 +19,7 @@ public class InventoryMouseSlotUI : MonoBehaviour
     bool isActive = false;
 
     public ItemSpawnManager itemSpawnManager;
+    public PlayerEquip playerEquip;
 
     private void Update()
     {
@@ -35,6 +36,7 @@ public class InventoryMouseSlotUI : MonoBehaviour
                 {
                     // Drop item
                     itemSpawnManager.SpawnItem(itemData, quantity);
+                    playerEquip.DestroyEquipped();
                     Clear();
                 }
             }

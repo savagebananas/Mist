@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class PlayerInput : MonoBehaviour
 {
     public static bool active = true;
+    public bool inventoryOpen = false;
 
     private PlayerInteractor playerInteraction;
     private PlayerLook playerLook;
@@ -34,11 +35,18 @@ public class PlayerInput : MonoBehaviour
         }
 
         // Open Inventory
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             ChangeInventoryUIState.Invoke();
             playerLook.ChangeActiveState();
-        } 
+            inventoryOpen = !inventoryOpen;
+        }
+
+        // =============================
+        // Hotbar and equipment
+        // =============================
+
+        if (inventoryOpen) return;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -63,6 +71,12 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             playerEquip.EquipItem(4);
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            // Drop item
+            playerEquip.DropCurrentItem();
         }
 
 
