@@ -6,10 +6,10 @@ public class MeleeWeapon : MonoBehaviour, IEquippable
 {
     [SerializeField] private int damage;
 
-    public void UseItem()
+    public void UseItem(string key)
     {
         // Animate Swing
-        Debug.Log("Swing");
+        Debug.Log("Swing " + key);
 
     }
 

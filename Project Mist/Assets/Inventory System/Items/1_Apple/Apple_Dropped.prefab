@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7081742657489475415}
   - component: {fileID: 4617128075344094663}
   - component: {fileID: 517829411462502200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Apple_Dropped
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7422904164606252840}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0.31805283, y: 0.13772863, z: 1.4635893}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 150, y: 150, z: 150}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -132,7 +132,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!135 &517829411462502200
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -140,9 +140,9 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7422904164606252840}
-  m_Material: {fileID: 13400000, guid: 430e99906484db44791fb1c797e92190, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.00065754604
-  m_Center: {x: 0.0000031740055, y: -0.000011842521, z: 0.00017254168}
+  m_Radius: 0.00050432637
+  m_Center: {x: 0.0000031740217, y: -0.000011842549, z: 0.000019322111}

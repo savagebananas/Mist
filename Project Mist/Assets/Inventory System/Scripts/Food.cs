@@ -5,9 +5,9 @@ using UnityEngine;
 public class Food : MonoBehaviour, IEquippable
 {
 
-    public void UseItem()
+    public void UseItem(string key)
     {
-        Debug.Log("Eat");
+        Debug.Log("Eat " + key);
     }
 
     public void DropItem(InventoryData hotbar, ItemSpawnManager itemSpawnManager)

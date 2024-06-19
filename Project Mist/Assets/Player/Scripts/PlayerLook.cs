@@ -29,7 +29,7 @@ public class PlayerLook : MonoBehaviour
 
         // Look up and down
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -80f, 85f);
 
         // Look left and right
         yRotation += mouseX;

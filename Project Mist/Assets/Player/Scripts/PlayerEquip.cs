@@ -51,4 +51,12 @@ public class PlayerEquip : MonoBehaviour
             DestroyEquipped();
         }
     }
+
+    public void UseItem(string key)
+    {
+        if (equippedItem == null) return;
+
+        IEquippable item = equippedItem.GetComponent<IEquippable>();
+        item.UseItem(key);
+    }
 }

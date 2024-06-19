@@ -79,6 +79,18 @@ public class PlayerInput : MonoBehaviour
             playerEquip.DropCurrentItem();
         }
 
+        // Use item
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Drop item
+            playerEquip.UseItem("LeftClick");
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            // Drop item
+            playerEquip.UseItem("R");
+        }
+
 
     }
 }
