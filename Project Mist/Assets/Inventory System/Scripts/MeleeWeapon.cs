@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour, IEquippable
 {
-
     private Camera cam;
     private AudioSource audioSource;
 
@@ -81,7 +80,7 @@ public class MeleeWeapon : MonoBehaviour, IEquippable
 
     public void DropItem(InventoryData hotbar, ItemSpawnManager itemSpawnManager)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void SetInventories(InventoryData inventoryHotbar, InventoryData inventoryMain)

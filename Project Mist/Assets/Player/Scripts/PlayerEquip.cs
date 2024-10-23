@@ -34,8 +34,10 @@ public class PlayerEquip : MonoBehaviour
         GameObject equippable = Instantiate(inventoryHotbar.iSlots[index].itemData.equippedItem, hands);
         equippedItem = equippable;
         itemData = inventoryHotbar.iSlots[index].itemData;
-        equippedIndex = index;
         equippable.GetComponent<IEquippable>().SetInventories(inventoryHotbar, inventoryMain);
+
+        equippedIndex = index;
+        
     }
 
     public void DestroyEquipped()
@@ -43,10 +45,14 @@ public class PlayerEquip : MonoBehaviour
         GameObject.Destroy(equippedItem);
     }
 
+    /// <summary>
+    /// Remove item from hotbar inventory and destroy equipped item gameobject
+    /// </summary>
     public void DropCurrentItem()
     {
         if (equippedItem != null)
         {
+            // Generate physical item in the world, set itemData 
             var obj = Instantiate(itemData.droppedItem, transform.position, Quaternion.identity);
             obj.GetComponent<DroppedItem>().SetQuantity(inventoryHotbar.iSlots[equippedIndex].quantity);
 

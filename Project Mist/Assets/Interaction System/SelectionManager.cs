@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
 
+/// <summary>
+/// Keeps track of current interactable which the player is looking at
+/// </summary>
 public class SelectionManager : MonoBehaviour
 {
     [SerializeField] private string interactableTag = "Interactable";
@@ -44,6 +47,9 @@ public class SelectionManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Remove "able to interact" visuals and dereference currentSelection
+    /// </summary>
     private void DeselectCurrent()
     {
         HighlightObject highlightObject = currentSelection.GetComponent<HighlightObject>();

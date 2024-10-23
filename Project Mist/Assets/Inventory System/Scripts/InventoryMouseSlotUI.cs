@@ -24,21 +24,20 @@ public class InventoryMouseSlotUI : MonoBehaviour
     private void Update()
     {
 
-        if (itemData != null)
-        {
-            // Follow mouse
-            transform.position = Input.mousePosition + (Vector3) offset;
+        if (itemData == null) return;
+
+        // Follow mouse
+        transform.position = Input.mousePosition + (Vector3) offset;
             
-            if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
+        {
+            // If not over UI
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                // If not over UI
-                if (!EventSystem.current.IsPointerOverGameObject())
-                {
-                    // Drop item
-                    itemSpawnManager.SpawnItem(itemData, quantity);
-                    playerEquip.DestroyEquipped();
-                    Clear();
-                }
+                // Drop item
+                itemSpawnManager.SpawnItem(itemData, quantity);
+                playerEquip.DestroyEquipped();
+                Clear();
             }
         }
 
