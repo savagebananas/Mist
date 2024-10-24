@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// Keeps track of current interactable which the player is looking at
@@ -15,7 +16,8 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // Important: ViewportPointToRay instead of ScreenToPointRay(mousePos) b/c of renderTexture
+        var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         RaycastHit hit;
 
         // Shoot Raycast
@@ -67,5 +69,17 @@ public class SelectionManager : MonoBehaviour
     public bool HasSelectedObject()
     {
         return currentSelection != null;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (HasSelectedObject())
+        {
+            Gizmos.color = Color.green;
+        }
+        else Gizmos.color = Color.yellow;
+
+        Gizmos.DrawRay(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)));
+
     }
 }
