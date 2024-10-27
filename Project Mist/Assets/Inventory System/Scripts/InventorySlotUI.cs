@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 [RequireComponent(typeof(Button))]
 public class InventorySlotUI : MonoBehaviour
 {
-    public InventoryUI parentDisplay;
+    public InventoryUI inventoryUI;
 
     // Frontend
     [SerializeField] private Image itemSprite;
@@ -57,7 +57,7 @@ public class InventorySlotUI : MonoBehaviour
 
     public void OnUISlotClick()
     {
-        parentDisplay?.SlotClicked(this);
+        inventoryUI?.SlotClicked(this);
     }
 
 }

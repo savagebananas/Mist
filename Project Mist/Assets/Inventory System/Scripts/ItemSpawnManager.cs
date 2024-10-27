@@ -6,7 +6,7 @@ public class ItemSpawnManager : MonoBehaviour
 {
     [SerializeField] Transform player;
 
-    public void SpawnItem(ItemData itemData, int amt)
+    public void SpawnItemOnPlayer(ItemData itemData, int amt)
     {
         var obj = Instantiate(itemData.droppedItem, player.transform.position, Quaternion.identity);
         obj.GetComponent<DroppedItem>().SetQuantity(amt);

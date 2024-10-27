@@ -15,6 +15,9 @@ public class UIController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Turns on/off inventory UI
+    /// </summary>
     public void UpdateInventoryState()
     {
         if (inventoryCanvas.active)

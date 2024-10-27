@@ -14,6 +14,11 @@ public class PlayerEquip : MonoBehaviour
     private ItemData itemData;
     private int equippedIndex = -1;
 
+    private void Awake()
+    {
+        inventoryHotbar.OnInventoryChanged.AddListener(OnHotbarUpdate);
+    }
+
     public void EquipItem(int index)
     {
         if (equippedIndex == index) return;
@@ -37,9 +42,22 @@ public class PlayerEquip : MonoBehaviour
         equippable.GetComponent<IEquippable>().SetInventories(inventoryHotbar, inventoryMain);
 
         equippedIndex = index;
-        
+    }
+    
+    public void OnHotbarUpdate()
+    {
+        if (equippedIndex == -1) return;
+        // if equipped hotbar item is removed, dequip item
+        if (inventoryHotbar.iSlots[equippedIndex].itemData == null)
+        {
+            equippedIndex = -1;
+            DestroyEquipped();
+        }
     }
 
+    /// <summary>
+    /// Destroy phyiscal equipped item
+    /// </summary>
     public void DestroyEquipped()
     {
         GameObject.Destroy(equippedItem);

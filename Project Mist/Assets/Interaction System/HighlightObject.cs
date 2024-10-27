@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Highlights 3D object by changing material color
+/// Use on any interactable object (visuals for item pickup)
+/// </summary>
 public class HighlightObject : MonoBehaviour
 {
     public Color highlightedColor = Color.white;

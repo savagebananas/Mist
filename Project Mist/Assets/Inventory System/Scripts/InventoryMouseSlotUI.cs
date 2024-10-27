@@ -35,8 +35,8 @@ public class InventoryMouseSlotUI : MonoBehaviour
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 // Drop item
-                itemSpawnManager.SpawnItem(itemData, quantity);
-                playerEquip.DestroyEquipped();
+                itemSpawnManager.SpawnItemOnPlayer(itemData, quantity);
+                //playerEquip.DestroyEquipped();
                 Clear();
             }
         }
@@ -51,6 +51,9 @@ public class InventoryMouseSlotUI : MonoBehaviour
         UpdateVisuals();
     }
 
+    /// <summary>
+    /// Clears data and updates visuals of slot
+    /// </summary>
     public void Clear()
     {
         // Clear data
@@ -82,6 +85,7 @@ public class InventoryMouseSlotUI : MonoBehaviour
 
     private void UpdateVisuals()
     {
+        // No item
         if (itemData == null)
         {
             // Clear visuals
@@ -91,9 +95,12 @@ public class InventoryMouseSlotUI : MonoBehaviour
             return;
         }
 
-        // Else
-        itemSprite.color = Color.white;
-        itemSprite.sprite = itemData.itemImage;
-        itemCountText.text = quantity.ToString();
+        // Yes item
+        else
+        {
+            itemSprite.color = Color.white;
+            itemSprite.sprite = itemData.itemImage;
+            itemCountText.text = quantity.ToString();
+        }
     }
 }
