@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
@@ -11,14 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public float jumpVelocity;
 
     // Variables for jumping
-    bool isGrounded;
+    public bool isGrounded;
     bool canJump;
     private const float GRAVITY = -9.8f;
     [SerializeField] float gravityMultiplier;
     private Vector3 verticalVelocity; // current vertical velocity of player
     [SerializeField] float jumpOffset; // for smooth jumping
     public float groundDistance; // distance from the ground which "counts" as ground
-    public Transform groundCheck; // position of the player's feet
+    public Transform feet; // position of the player's feet
     public LayerMask groundMask; // layer for "ground" gameobjects
 
     void Start()
@@ -29,12 +30,16 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Jumping();
+        Movement();
+    }
 
+    private void Movement()
+    {
         // Moving left and right
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 moveVector = (transform.right * x) + (transform.forward * z);
-        
+
         controller.Move(moveVector * speed * Time.deltaTime);
     }
 
@@ -44,8 +49,8 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void Jumping()
     {
-        canJump = Physics.CheckSphere(groundCheck.position, jumpOffset, groundMask);
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        canJump = Physics.CheckSphere(feet.position, jumpOffset, groundMask);
+        isGrounded = Physics.CheckSphere(feet.position, groundDistance, groundMask);
 
         // Jump
         if (Input.GetButtonDown("Jump") && canJump)
@@ -62,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
+        Gizmos.DrawWireSphere(feet.position, groundDistance);
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(groundCheck.position, jumpOffset);
+        Gizmos.DrawWireSphere(feet.position, jumpOffset);
     }
 }

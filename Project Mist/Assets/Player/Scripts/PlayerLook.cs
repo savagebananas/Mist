@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
     private GameObject player;
-    public Camera cam;
+    public GameObject cameraHolder;
     public float sensitivity;
 
     private bool canLookAround = true;
@@ -35,7 +35,7 @@ public class PlayerLook : MonoBehaviour
         yRotation += mouseX;
 
         player.transform.localRotation = Quaternion.Euler(0, yRotation, 0);
-        cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        cameraHolder.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
     }
 
     public void ChangeActiveState()
