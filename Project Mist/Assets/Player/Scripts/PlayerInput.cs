@@ -1,15 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
-
-[RequireComponent(typeof(PlayerInteractor), typeof(PlayerEquip))]
+[RequireComponent(typeof(PlayerInteractor), typeof(PlayerEquip), typeof(PlayerMovement))]
 public class PlayerInput : MonoBehaviour
 {
+    [Header("Input Actions")]
+    [SerializeField] private InputActionAsset playerControls;
+    private InputAction moveAction;
+    private InputAction lookAction;
+    private InputAction jumpAction;
+    private InputAction sprintAction;
+    private InputAction interactAction;
+    private InputAction equipAction;
+    private InputAction inventoryAction;
+    private InputAction dropItemAction;
+    private InputAction useItemAction;
+    private Vector2 moveInput;
+    private Vector2 lookInput;
+
+
     public static bool active = true;
     public bool inventoryOpen = false;
 
+    private PlayerMovement playerMovement;
     private PlayerInteractor playerInteraction;
     private PlayerLook playerLook;
     private PlayerEquip playerEquip;
@@ -18,79 +34,129 @@ public class PlayerInput : MonoBehaviour
 
     void Awake()
     {
+        playerMovement = GetComponent<PlayerMovement>();
         playerInteraction = GetComponent<PlayerInteractor>();
         playerLook = GetComponent<PlayerLook>();
         playerEquip = GetComponent<PlayerEquip>();
 
         ChangeInventoryUIState.AddListener(GameObject.Find("UIController").GetComponent<UIController>().UpdateInventoryState);
+        
+        moveAction = playerControls.FindActionMap("Gameplay").FindAction("Move");
+        lookAction = playerControls.FindActionMap("Gameplay").FindAction("Look");
+        jumpAction = playerControls.FindActionMap("Gameplay").FindAction("Jump");
+        sprintAction = playerControls.FindActionMap("Gameplay").FindAction("Sprint");
+        interactAction = playerControls.FindActionMap("Gameplay").FindAction("Interact");
+        equipAction = playerControls.FindActionMap("Gameplay").FindAction("Equip");
+        inventoryAction = playerControls.FindActionMap("Gameplay").FindAction("Inventory");
+        dropItemAction = playerControls.FindActionMap("Gameplay").FindAction("Drop");
+        useItemAction = playerControls.FindActionMap("Gameplay").FindAction("Use");
+
+        moveAction.performed += context => moveInput = context.ReadValue<Vector2>();
+        moveAction.canceled += context => moveInput = Vector2.zero;
+
+        lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
+        lookAction.canceled += context => lookInput = Vector2.zero;
     }
+
+    private void OnEnable()
+    {
+        moveAction.Enable();
+        lookAction.Enable();
+        jumpAction.Enable();
+        sprintAction.Enable();
+        interactAction.Enable();
+        equipAction.Enable();
+        inventoryAction.Enable();
+        dropItemAction.Enable();
+        useItemAction.Enable();
+
+        interactAction.started += Interact;
+        equipAction.performed += Equip;
+        inventoryAction.started += Inventory;
+        dropItemAction.started += DropItem;
+        useItemAction.started += UseItem;
+    }
+
+    private void OnDisable()
+    {
+        moveAction.Disable();
+        lookAction.Disable();
+        jumpAction.Disable();
+        sprintAction.Disable();
+        interactAction.Disable();
+        equipAction.Disable();
+        inventoryAction.Disable();
+        dropItemAction.Disable();
+        useItemAction.Disable();
+
+        interactAction.started -= Interact;
+        equipAction.performed -= Equip;
+        inventoryAction.started -= Inventory;
+        dropItemAction.started -= DropItem;
+        useItemAction.started -= UseItem;
+    }
+
 
     void Update()
     {
         if (!active) return;
+        
+        playerMovement.HandleMovement(moveInput, sprintAction);
+        playerMovement.HandleJump(jumpAction);
+        playerLook.HandleRotation(lookInput);
+    }
 
-        if (Input.GetButtonDown("Interact"))
-        {
-            playerInteraction.Interact();
-        }
 
-        // Open Inventory
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ChangeInventoryUIState.Invoke();
-            playerLook.ChangeActiveState();
-            inventoryOpen = !inventoryOpen;
-        }
 
-        // =============================
-        // Hotbar and equipment
-        // =============================
+    private void Interact(InputAction.CallbackContext context)
+    {
+        playerInteraction.Interact();
+    }
 
+    private void Equip(InputAction.CallbackContext context)
+    {
+        if (!active) return;
         if (inventoryOpen) return;
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        var key = context.control.name;
+        Debug.Log(key);
+        switch (key)
         {
-            playerEquip.EquipItem(0);
+            case "1":
+                playerEquip.EquipItem(0);
+                break;
+            case "2":
+                playerEquip.EquipItem(1);
+                break;
+            case "3":
+                playerEquip.EquipItem(2);
+                break;
+            case "4":
+                playerEquip.EquipItem(3);
+                break;
+            case "5":
+                playerEquip.EquipItem(4);
+                break;
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            playerEquip.EquipItem(1);
-        }
+    private void Inventory(InputAction.CallbackContext context)
+    {
+        if (!active) return;
+        ChangeInventoryUIState.Invoke();
+        playerLook.ChangeActiveState();
+        inventoryOpen = !inventoryOpen;
+    }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            playerEquip.EquipItem(2);
-        }
+    private void DropItem(InputAction.CallbackContext context)
+    {
+        if (!active) return;
+        playerEquip.DropCurrentItem();
+    }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            playerEquip.EquipItem(3);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            playerEquip.EquipItem(4);
-        }
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            // Drop item
-            playerEquip.DropCurrentItem();
-        }
-
-        // Use item
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Drop item
-            playerEquip.UseItem("LeftClick");
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            // Drop item
-            playerEquip.UseItem("R");
-        }
-
-
+    private void UseItem(InputAction.CallbackContext context)
+    {
+        if (!active) return;
+        Debug.Log("PEW");
     }
 }

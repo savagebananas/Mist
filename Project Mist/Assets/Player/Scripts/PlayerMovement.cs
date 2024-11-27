@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
 
-    // Player movement values
-    public float speed;
-    public float jumpVelocity;
+    [Header("Movement values")]
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float jumpVelocity;
+    [SerializeField] private float sprintMultiplier;
 
-    // Variables for jumping
+    [Header("Jumping values")]
     public bool isGrounded;
-    bool canJump;
+    private bool canJump;
     private const float GRAVITY = -9.8f;
     [SerializeField] float gravityMultiplier;
+    [SerializeField] private float jumpOffset; // for smooth jumping
+    [SerializeField] private float groundDistance; // distance from the ground which "counts" as ground
+    [SerializeField] private Transform feet; // position of the player's feet
+    [SerializeField] private LayerMask groundMask; // layer for "ground" gameobjects
+
     private Vector3 verticalVelocity; // current vertical velocity of player
-    [SerializeField] float jumpOffset; // for smooth jumping
-    public float groundDistance; // distance from the ground which "counts" as ground
-    public Transform feet; // position of the player's feet
-    public LayerMask groundMask; // layer for "ground" gameobjects
+
 
     void Start()
     {
@@ -29,38 +33,40 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Jumping();
-        Movement();
+        Vertical();
     }
 
-    private void Movement()
+    public void HandleMovement(Vector2 input, InputAction sprintAction)
     {
-        // Moving left and right
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        Vector3 moveVector = (transform.right * x) + (transform.forward * z);
+        float speedMultiplier = sprintAction.ReadValue<float>() > 0 ? sprintMultiplier : 1f;
 
-        controller.Move(moveVector * speed * Time.deltaTime);
+        float verticalSpeed = input.y * walkSpeed * speedMultiplier;
+        float horizonalSpeed = input.x * walkSpeed * speedMultiplier;
+        Vector3 moveVector = (transform.right * horizonalSpeed) + (transform.forward * verticalSpeed);
+        controller.Move(moveVector * Time.deltaTime);
     }
 
     /// <summary>
     /// Jumping Logic
     /// canJump is slightly earlier (more range) than isGrounded for easy jumps
     /// </summary>
-    private void Jumping()
+    public void HandleJump(InputAction jumpAction)
     {
         canJump = Physics.CheckSphere(feet.position, jumpOffset, groundMask);
-        isGrounded = Physics.CheckSphere(feet.position, groundDistance, groundMask);
-
-        // Jump
-        if (Input.GetButtonDown("Jump") && canJump)
+        if (jumpAction.triggered && canJump)
         {
             verticalVelocity.y = jumpVelocity; // set initial velocity (pos)
         }
+    }
 
-        // In the air, enable gravity
+    /// <summary>
+    /// Updates vertical movement of player
+    /// Gravity logic
+    /// </summary>
+    private void Vertical()
+    {
+        isGrounded = Physics.CheckSphere(feet.position, groundDistance, groundMask);
         if (!isGrounded) verticalVelocity.y += GRAVITY * gravityMultiplier * Time.deltaTime;
-
         controller.Move(verticalVelocity * Time.deltaTime);
     }
 

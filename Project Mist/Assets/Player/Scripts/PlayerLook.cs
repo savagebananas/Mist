@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
     private GameObject player;
-    public GameObject cameraHolder;
-    public float sensitivity;
+    [SerializeField] private GameObject cameraHolder;
+    [SerializeField] private float sensitivity;
 
     private bool canLookAround = true;
 
@@ -20,22 +20,19 @@ public class PlayerLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+
+    public void HandleRotation(Vector2 lookInput)
     {
         if (!canLookAround) return;
 
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        // Look left and right
+        xRotation = lookInput.x * sensitivity;
+        player.transform.Rotate(0, xRotation, 0);
 
         // Look up and down
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -80f, 85f);
-
-        // Look left and right
-        yRotation += mouseX;
-
-        player.transform.localRotation = Quaternion.Euler(0, yRotation, 0);
-        cameraHolder.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        yRotation -= lookInput.y * sensitivity;
+        yRotation = Mathf.Clamp(yRotation, -80f, 85f);
+        cameraHolder.transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
     }
 
     public void ChangeActiveState()
