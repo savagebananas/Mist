@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float sprintMultiplier;
 
     [Header("Jumping values")]
-    public bool isGrounded;
+    public bool isGrounded = false;
     private bool canJump;
     private const float GRAVITY = -9.8f;
     [SerializeField] float gravityMultiplier;

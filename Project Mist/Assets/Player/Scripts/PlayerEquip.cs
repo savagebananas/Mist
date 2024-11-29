@@ -11,7 +11,7 @@ public class PlayerEquip : MonoBehaviour
     [SerializeField] private Transform hands;
 
     private GameObject equippedItem;
-    private ItemData itemData;
+    private ItemData equippedItemData;
     private int equippedIndex = -1;
 
     private void Awake()
@@ -30,7 +30,7 @@ public class PlayerEquip : MonoBehaviour
         if (inventoryHotbar.iSlots[index].itemData == null)
         {
             equippedItem = null;
-            itemData = null;
+            equippedItemData = null;
             equippedIndex = index;
             return;
         }
@@ -38,7 +38,7 @@ public class PlayerEquip : MonoBehaviour
         // Equip valid item
         GameObject equippable = Instantiate(inventoryHotbar.iSlots[index].itemData.equippedItem, hands);
         equippedItem = equippable;
-        itemData = inventoryHotbar.iSlots[index].itemData;
+        equippedItemData = inventoryHotbar.iSlots[index].itemData;
         equippable.GetComponent<IEquippable>().SetInventories(inventoryHotbar, inventoryMain);
 
         equippedIndex = index;
@@ -71,7 +71,7 @@ public class PlayerEquip : MonoBehaviour
         if (equippedItem != null)
         {
             // Generate physical item in the world, set itemData 
-            var obj = Instantiate(itemData.droppedItem, transform.position, Quaternion.identity);
+            var obj = Instantiate(equippedItemData.droppedItem, transform.position, Quaternion.identity);
             obj.GetComponent<DroppedItem>().SetQuantity(inventoryHotbar.iSlots[equippedIndex].quantity);
 
             // Remove from inventory and destroy equipped item

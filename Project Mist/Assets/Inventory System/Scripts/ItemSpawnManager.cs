@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class ItemSpawnManager : MonoBehaviour
 {
+
+    public static ItemSpawnManager instance;
+
     [SerializeField] Transform player;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void SpawnItemOnPlayer(ItemData itemData, int amt)
     {
