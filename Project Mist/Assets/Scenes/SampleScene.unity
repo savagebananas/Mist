@@ -1837,10 +1837,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpVelocity: 4
+  jumpVelocity: 6
   sprintMultiplier: 1.5
   isGrounded: 0
-  gravityMultiplier: 1.25
+  gravityMultiplier: 2
   jumpOffset: 0.3
   groundDistance: 0.1
   feet: {fileID: 742101484}
@@ -3456,7 +3456,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 600.75, y: 2, z: 399.25}
+  m_LocalPosition: {x: 600.75, y: 2, z: 398.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3540,7 +3540,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 1706801795}
   parent: {fileID: 409215013}
-  player: {fileID: 0}
 --- !u!1001 &984273637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6668,7 +6667,7 @@ Transform:
   m_GameObject: {fileID: 1900577780}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 600.75, y: 2, z: 399.25}
+  m_LocalPosition: {x: 600.75, y: 2, z: 398.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7610,7 +7609,7 @@ Transform:
   m_GameObject: {fileID: 2042358242}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8332,7 +8331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 1171352989537689045}
   itemCountText: {fileID: 1171352988560901342}
-  itemSpawnManager: {fileID: 1778406035}
   playerEquip: {fileID: 463216834}
 --- !u!225 &1171352989416183000
 CanvasGroup:
