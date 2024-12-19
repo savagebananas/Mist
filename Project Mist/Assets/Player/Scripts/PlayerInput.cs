@@ -60,10 +60,13 @@ public class PlayerInput : MonoBehaviour
 
     private void OnEnable()
     {
+        // Movement Actions (send to PlayerMovement script)
         moveAction.Enable();
         lookAction.Enable();
         jumpAction.Enable();
         sprintAction.Enable();
+
+        // Inventory Actions
         interactAction.Enable();
         equipAction.Enable();
         inventoryAction.Enable();

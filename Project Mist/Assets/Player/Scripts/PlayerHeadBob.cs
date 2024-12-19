@@ -6,20 +6,20 @@ public class PlayerHeadBob : MonoBehaviour
     [SerializeField, Range(0, 0.1f)] private float camYAmplitude = 0.015f;
     [SerializeField, Range(0, 0.1f)] private float camXAmplitude = 0.015f;
     [SerializeField, Range(0, 30)] private float frequency = 10f;
+    private float sprintMulitplier = 1.5f;
 
     [SerializeField] Transform camera = null;
     [SerializeField] Transform cameraHolder = null;
 
-    [SerializeField] private float toggleSpeed = 0; // minimum speed of player for headbob
     private Vector3 startPos;
-    private CharacterController controller;
     private PlayerMovement playerMovement;
 
     private void Awake()
     {
-        controller = GetComponent<CharacterController>();
         playerMovement = GetComponent<PlayerMovement>();
         startPos = camera.localPosition;
+
+        sprintMulitplier = playerMovement.GetSprintMultiplier();
     }
 
     private void Update()
@@ -32,11 +32,11 @@ public class PlayerHeadBob : MonoBehaviour
         camera.LookAt(FocusTarget());
     }
 
-    private void HeadBob()
+    private void HeadBob(float mulitplier)
     {
         Vector3 difference = Vector3.zero;
-        difference.y += Mathf.Sin(Time.time * frequency) * camYAmplitude;
-        difference.x += Mathf.Cos(Time.time * frequency / 2) * camXAmplitude;
+        difference.y += Mathf.Sin(Time.time * frequency * mulitplier) * camYAmplitude;
+        difference.x += Mathf.Cos(Time.time * frequency * mulitplier / 2) * camXAmplitude;
 
         camera.localPosition += difference;
     }
@@ -46,10 +46,16 @@ public class PlayerHeadBob : MonoBehaviour
     /// </summary>
     private void CheckMotion()
     {
-        float speed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
-        if (speed < toggleSpeed) return;
-        if (!playerMovement.isGrounded) return; // if in the air, don't headbob
-        HeadBob();
+        // Movement and grounded checks
+        if (!playerMovement.isGrounded) return; 
+        if (!playerMovement.GetIsWalking()) return;
+
+        // Walking
+        if (!playerMovement.GetIsSprinting()) HeadBob(1f);
+
+        // Sprinting
+        else HeadBob(sprintMulitplier);
+
     }
 
     private void ResetCamPos()

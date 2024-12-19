@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float jumpVelocity;
     [SerializeField] private float sprintMultiplier;
+    [SerializeField] private bool isWalking = false;
+    [SerializeField] private bool isSprinting = false;
+
 
     [Header("Jumping values")]
     public bool isGrounded = false;
@@ -38,7 +41,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleMovement(Vector2 input, InputAction sprintAction)
     {
-        float speedMultiplier = sprintAction.ReadValue<float>() > 0 ? sprintMultiplier : 1f;
+        if (input.magnitude <= 0)
+        {
+            isWalking = false;
+            return;
+        }
+        else isWalking = true;
+
+        float speedMultiplier = 1;
+        if (sprintAction.ReadValue<float>() <= 0)
+        {
+            isSprinting = false;
+        }
+        else
+        {
+            isSprinting = true;
+            speedMultiplier = sprintMultiplier;
+        }
 
         float verticalSpeed = input.y * walkSpeed * speedMultiplier;
         float horizonalSpeed = input.x * walkSpeed * speedMultiplier;
@@ -69,6 +88,22 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded) verticalVelocity.y += GRAVITY * gravityMultiplier * Time.deltaTime;
         controller.Move(verticalVelocity * Time.deltaTime);
     }
+
+    public bool GetIsWalking()
+    {
+        return isWalking;
+    }
+
+    public bool GetIsSprinting()
+    {
+        return isSprinting;
+    }
+
+    public float GetSprintMultiplier()
+    {
+        return sprintMultiplier;
+    }
+
 
     private void OnDrawGizmos()
     {
