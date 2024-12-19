@@ -8,15 +8,15 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 9fc0d4010bbf28b4594072e72b8655ab
+  m_OcclusionCullingData: {fileID: 36300000, guid: e521d839315d05842bb8b19585bc25f0, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
-  m_FogMode: 3
+  m_FogColor: {r: 0.2469295, g: 0.25899595, b: 0.2924528, a: 1}
+  m_FogMode: 2
   m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -309,6 +313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Window4 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 915b2aa2ce762d048a5564b796c3bf5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -375,6 +383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Window4 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 915b2aa2ce762d048a5564b796c3bf5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -440,6 +452,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 865e58fc4142dcc4baf17d6d5cfc942f, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Windmill
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 865e58fc4142dcc4baf17d6d5cfc942f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -515,6 +531,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: beb51d7fc08f84f4e9176e2efcc52f70, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -588,6 +608,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 114f41c243ae7af41868e547407cb6a4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -657,6 +681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -722,6 +750,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -789,6 +821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_WoodenBoards (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1252f8856231e74f89e2580410607bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -826,6 +862,157 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8634060567236447461, guid: df86403210fac7240903e81d2f54f219, type: 3}
+--- !u!1 &237874444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 237874447}
+  - component: {fileID: 237874446}
+  - component: {fileID: 237874448}
+  m_Layer: 0
+  m_Name: generative-dark-pad-loop-wind-stem (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &237874446
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237874444}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3cd8a78697edbd4459726d13a7e09d20, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3cd8a78697edbd4459726d13a7e09d20, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.217
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.681
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &237874447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237874444}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &237874448
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237874444}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1000, y: 500, z: 1000}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &270874462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -881,6 +1068,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f6a0581d6d981b747a70176626647da6, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Window1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6a0581d6d981b747a70176626647da6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1079,6 +1270,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1182,6 +1377,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1428,6 +1627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Window4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 915b2aa2ce762d048a5564b796c3bf5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1505,6 +1708,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2b541a92ded232b4bb6fbcfe3b674f80, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_LargeIvy5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b541a92ded232b4bb6fbcfe3b674f80, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2046,6 +2253,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 77969ec2f1e7bfd4b9210a4739c76cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2114,6 +2325,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e1252f8856231e74f89e2580410607bd, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_WoodenBoards (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1252f8856231e74f89e2580410607bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2184,6 +2399,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 05d8b84afcd3fef4ba5bf9f17a1fc4b6, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 05d8b84afcd3fef4ba5bf9f17a1fc4b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2257,6 +2476,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: df86403210fac7240903e81d2f54f219, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df86403210fac7240903e81d2f54f219, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2502,6 +2725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Rubble2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9418a4137545a4c49bb328480cc30e3e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2567,6 +2794,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2671,6 +2902,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2739,6 +2974,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e2f616698337e92418aa18e117165c2b, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_LargeBrickPile
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2f616698337e92418aa18e117165c2b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2902,6 +3141,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5b8cd251ac35f80439d855c18baddb5c, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_CraftingBench
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5b8cd251ac35f80439d855c18baddb5c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3080,6 +3323,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 44bfa93efeed48643907f7961f1cd9b0, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_SmallCardboardBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 44bfa93efeed48643907f7961f1cd9b0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3260,6 +3507,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df86403210fac7240903e81d2f54f219, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3328,6 +3579,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3593,6 +3848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Duct
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f62948899f5652a449d3217b7ebf2e11, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3658,6 +3917,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 48fe227efde728f4f80c6cf40aa575eb, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Bucket
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 48fe227efde728f4f80c6cf40aa575eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3728,6 +3991,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 179bb92f6485e424d968ba86c14016e8, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_MedPack
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 179bb92f6485e424d968ba86c14016e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3810,6 +4077,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3907,6 +4178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_WoodenPost
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a290911dcc631d4448297be078b46e25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3972,6 +4247,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e588d9122891c634781b0237c62fe6af, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_LongLadder
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e588d9122891c634781b0237c62fe6af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4193,6 +4472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4368,6 +4651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_RubblePile1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 88e6a053ae9a0ad45848575c3e79a27e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4434,6 +4721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4499,6 +4790,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 83cfc0d38a1c05c4ca8f07af449c1b03, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_WallDuct
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 83cfc0d38a1c05c4ca8f07af449c1b03, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4863,6 +5158,157 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1778484880677352301, guid: f4f6bda32054d1a479b3779052780244, type: 3}
+--- !u!1 &1320740382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320740384}
+  - component: {fileID: 1320740383}
+  - component: {fileID: 1320740385}
+  m_Layer: 0
+  m_Name: generative-dark-pad-loop-wind-stem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1320740383
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320740382}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3cd8a78697edbd4459726d13a7e09d20, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3cd8a78697edbd4459726d13a7e09d20, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.217
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.681
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1320740384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320740382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1320740385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320740382}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1000, y: 500, z: 1000}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1324947438 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: df86403210fac7240903e81d2f54f219, type: 3}
@@ -5049,6 +5495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_PavedFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 527d82b4cf2dcd849a24fd92efb50cd9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5114,6 +5564,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 915b2aa2ce762d048a5564b796c3bf5e, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Window4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 915b2aa2ce762d048a5564b796c3bf5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5181,6 +5635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Sign1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75337a6b460701c45b1839b93116f510, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5246,6 +5704,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 915b2aa2ce762d048a5564b796c3bf5e, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Window4 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 915b2aa2ce762d048a5564b796c3bf5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5419,6 +5881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5484,6 +5950,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 88e6a053ae9a0ad45848575c3e79a27e, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_RubblePile1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 88e6a053ae9a0ad45848575c3e79a27e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5555,6 +6025,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec6f743ea216da14f8b66f975ea462c4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5568,6 +6042,157 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec6f743ea216da14f8b66f975ea462c4, type: 3}
   m_PrefabInstance: {fileID: 1560832790}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1561192648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561192651}
+  - component: {fileID: 1561192650}
+  - component: {fileID: 1561192652}
+  m_Layer: 0
+  m_Name: generative-dark-pad-loop-wind-stem (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1561192650
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561192648}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3cd8a78697edbd4459726d13a7e09d20, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3cd8a78697edbd4459726d13a7e09d20, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.217
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.681
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1561192651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561192648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1000, y: 0, z: 1000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1561192652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561192648}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1000, y: 500, z: 1000}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1563922974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5697,6 +6322,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4f6bda32054d1a479b3779052780244, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5770,6 +6399,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e51321ed3f6df3546921e2e90144ac31, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5838,6 +6471,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 523aeac62ccb9634ea84ec7aabbfa2f8, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Door1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 523aeac62ccb9634ea84ec7aabbfa2f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6390,6 +7027,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6458,6 +7099,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f6a0581d6d981b747a70176626647da6, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Window1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6a0581d6d981b747a70176626647da6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6556,6 +7201,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f36a70829cdd2a4488939e936d30b46b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6580,6 +7229,10 @@ PrefabInstance:
     - target: {fileID: 7372394999474445488, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
       propertyPath: m_Name
       value: Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372394999474445488, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7862109143660365322, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
       propertyPath: m_LocalScale.x
@@ -6693,6 +7346,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e1252f8856231e74f89e2580410607bd, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_WoodenBoards (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1252f8856231e74f89e2580410607bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6965,6 +7622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Window4 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 915b2aa2ce762d048a5564b796c3bf5e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7031,6 +7692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Grass
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 50e15e57bf0f1bf4984a33d435f16c62, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7096,6 +7761,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 523aeac62ccb9634ea84ec7aabbfa2f8, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Door1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 523aeac62ccb9634ea84ec7aabbfa2f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7195,6 +7864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_Hatch
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 219f5c2f74427994abb2cb8fdc5371fe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7261,6 +7934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_LargeBrickPile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2f616698337e92418aa18e117165c2b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7282,6 +7959,10 @@ PrefabInstance:
     - target: {fileID: 7372394999474445488, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
       propertyPath: m_Name
       value: Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372394999474445488, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7862109143660365322, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
       propertyPath: m_LocalScale.x
@@ -7396,6 +8077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_PostApoc_BarbedWire (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c7aaacfe771ab3419b9427e97ce7021, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7477,6 +8162,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7823,6 +8512,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7874,6 +8567,10 @@ PrefabInstance:
     - target: {fileID: 7372394999474445488, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
       propertyPath: m_Name
       value: Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7372394999474445488, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7862109143660365322, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
       propertyPath: m_LocalScale.x
@@ -7932,6 +8629,157 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
+--- !u!1 &2092194392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2092194395}
+  - component: {fileID: 2092194394}
+  - component: {fileID: 2092194396}
+  m_Layer: 0
+  m_Name: generative-dark-pad-loop-wind-stem (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &2092194394
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092194392}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3cd8a78697edbd4459726d13a7e09d20, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3cd8a78697edbd4459726d13a7e09d20, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.217
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.681
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2092194395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092194392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1000, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2092194396
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092194392}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1000, y: 500, z: 1000}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2100366075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7987,6 +8835,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e1252f8856231e74f89e2580410607bd, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_WoodenBoards
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1252f8856231e74f89e2580410607bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8057,6 +8909,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33ac161826c79d24bbf4129c38800654, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8158,6 +9014,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df86403210fac7240903e81d2f54f219, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8226,6 +9086,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2d53b68e6d77087469dcd8c24ac7059d, type: 3}
       propertyPath: m_Name
       value: LP_PostApoc_Door2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d53b68e6d77087469dcd8c24ac7059d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8635,6 +9499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate
       objectReference: {fileID: 0}
+    - target: {fileID: 7372394999474445488, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7862109143660365322, guid: ab2a2d9098b193b4b8865a3d1e9d1bd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 597.35
@@ -8703,3 +9571,7 @@ SceneRoots:
   - {fileID: 2035545704}
   - {fileID: 10253806}
   - {fileID: 1124940222}
+  - {fileID: 1320740384}
+  - {fileID: 237874447}
+  - {fileID: 2092194395}
+  - {fileID: 1561192651}
