@@ -32,6 +32,8 @@ public class PlayerInput : MonoBehaviour
 
     public UnityEvent ChangeInventoryUIState;
 
+    [SerializeField] private MuzzleFlash muzzleFlash;
+
     void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -56,6 +58,8 @@ public class PlayerInput : MonoBehaviour
 
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
+
+
     }
 
     private void OnEnable()
@@ -160,6 +164,7 @@ public class PlayerInput : MonoBehaviour
     private void UseItem(InputAction.CallbackContext context)
     {
         if (!active) return;
+        muzzleFlash.Flash();
         Debug.Log("PEW");
     }
 }
