@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour, IEquippable
@@ -24,14 +25,15 @@ public class MeleeWeapon : MonoBehaviour, IEquippable
 
     private void Start()
     {
-        cam = transform.parent.GetComponentInParent<Camera>();
+        cam = FirstPersonCamera.Instance.GetCam();
+
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void UseItem(string key)
+    public void UseItem()
     {
         // Animate Swing
-        Debug.Log("Swing " + key);
+        Debug.Log("Swing ");
         Attack();
 
     }
@@ -43,8 +45,8 @@ public class MeleeWeapon : MonoBehaviour, IEquippable
         readyToAttack = false;
         isAttacking = true;
 
-        Invoke(nameof(ResetAttack), attackSpeed);
-        Invoke(nameof(AttackRaycast), attackDelay);
+        Invoke(nameof(ResetAttack), attackSpeed); // cooldown for next attack
+        Invoke(nameof(AttackRaycast), attackDelay); // swing weapon (damage will happen after delay)
 
         // audioSource.pitch = RandomRange(0.9f, 1.1f);
         // audioSource.PlayOneShot(swordSwing);
@@ -76,16 +78,6 @@ public class MeleeWeapon : MonoBehaviour, IEquippable
     {
         readyToAttack = true;
         isAttacking = false;
-    }
-
-    public void DropItem(InventoryData hotbar, ItemSpawnManager itemSpawnManager)
-    {
-        
-    }
-
-    public void SetInventories(InventoryData inventoryHotbar, InventoryData inventoryMain)
-    {
-
     }
 
 }

@@ -7,9 +7,9 @@ public class Food : MonoBehaviour, IEquippable
 
 
 
-    public void UseItem(string key)
+    public void UseItem()
     {
-        Debug.Log("Eat " + key);
+        Debug.Log("Eat ");
     }
 
     public void DropItem(InventoryData hotbar, ItemSpawnManager itemSpawnManager)

@@ -164,7 +164,8 @@ public class PlayerInput : MonoBehaviour
     private void UseItem(InputAction.CallbackContext context)
     {
         if (!active) return;
-        muzzleFlash.Flash();
-        Debug.Log("PEW");
+        
+        //muzzleFlash.Flash();
+        playerEquip.UseItem();
     }
 }

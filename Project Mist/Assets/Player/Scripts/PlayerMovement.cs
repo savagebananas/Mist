@@ -28,10 +28,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 verticalVelocity; // current vertical velocity of player
 
+    public static PlayerMovement Instance { get; private set; }
 
-    void Start()
+    void Awake()
     {
         controller = this.GetComponent<CharacterController>();
+        Instance = this;
     }
 
     void Update()
@@ -104,6 +106,10 @@ public class PlayerMovement : MonoBehaviour
         return sprintMultiplier;
     }
 
+    public Transform GetTransform()
+    {
+        return transform;
+    }
 
     private void OnDrawGizmos()
     {

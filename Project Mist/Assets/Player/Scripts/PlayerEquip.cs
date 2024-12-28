@@ -39,11 +39,12 @@ public class PlayerEquip : MonoBehaviour
         GameObject equippable = Instantiate(inventoryHotbar.iSlots[index].itemData.equippedItem, hands);
         equippedItem = equippable;
         equippedItemData = inventoryHotbar.iSlots[index].itemData;
-        equippable.GetComponent<IEquippable>().SetInventories(inventoryHotbar, inventoryMain);
-
         equippedIndex = index;
     }
     
+    /// <summary>
+    /// Called when the hotbar inventory has changed (Ex: item is removed)
+    /// </summary>
     public void OnHotbarUpdate()
     {
         if (equippedIndex == -1) return;
@@ -76,15 +77,16 @@ public class PlayerEquip : MonoBehaviour
 
             // Remove from inventory and destroy equipped item
             inventoryHotbar.RemoveFromInventory(equippedIndex);
+            equippedIndex = -1;
             DestroyEquipped();
         }
     }
 
-    public void UseItem(string key)
+    public void UseItem()
     {
         if (equippedItem == null) return;
 
         IEquippable item = equippedItem.GetComponent<IEquippable>();
-        item.UseItem(key);
+        item.UseItem();
     }
 }

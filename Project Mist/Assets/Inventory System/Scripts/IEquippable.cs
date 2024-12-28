@@ -4,9 +4,6 @@ using UnityEngine;
 
 public interface IEquippable
 {
-    public void UseItem(string key);
+    public void UseItem();
 
-    public void DropItem(InventoryData hotbar, ItemSpawnManager itemSpawnManager);
-
-    public void SetInventories(InventoryData inventoryHotbar, InventoryData inventoryMains);
 }
