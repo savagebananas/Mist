@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages player equipment (5 item slots)
+/// Functionality to equip hand held items and dropping held items
+/// </summary>
 public class PlayerEquip : MonoBehaviour
 {
     [SerializeField] private InventoryData inventoryHotbar;
