@@ -87,7 +87,11 @@ public class InventoryUI : MonoBehaviour
                     Debug.Log("Case 3.2");
                     slot.AddAmount(mouseSlotUI.GetQuantity(), out int remaining);
                     slotUI.UpdateUISlot(slot);
-                    if (remaining == 0) return;
+                    if (remaining == 0)
+                    {
+                        mouseSlotUI.Clear();
+                        return;
+                    }
                     mouseSlotUI.SetQuantity(remaining);
                 }
             }

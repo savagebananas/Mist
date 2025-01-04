@@ -16,11 +16,11 @@ MonoBehaviour:
   - itemData: {fileID: 11400000, guid: 935c8cf36d35402469b6cd74eb4ff431, type: 2}
     quantity: 5
   - itemData: {fileID: 11400000, guid: 935c8cf36d35402469b6cd74eb4ff431, type: 2}
-    quantity: 3
-  - itemData: {fileID: 11400000, guid: 1bf14368d1ea9874b8369a6d6eeb2a06, type: 2}
+    quantity: 5
+  - itemData: {fileID: 11400000, guid: 935c8cf36d35402469b6cd74eb4ff431, type: 2}
     quantity: 1
-  - itemData: {fileID: 11400000, guid: 1bf14368d1ea9874b8369a6d6eeb2a06, type: 2}
-    quantity: 1
+  - itemData: {fileID: 0}
+    quantity: 0
   - itemData: {fileID: 0}
     quantity: 0
   - itemData: {fileID: 0}
