@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 370167351187512890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8536410809233765570}
   - component: {fileID: 9052144149528767651}
   - component: {fileID: 365835666834704669}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8455787102358638588}
   - component: {fileID: -1153167890751446283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TacticalAxe_Useable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 6459472754784717208}
   - component: {fileID: 3233248566497624280}
   - component: {fileID: 2934217353607671461}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 7256010016376306655}
   - component: {fileID: 123416243065073417}
   - component: {fileID: 4584514440652235895}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
