@@ -338,9 +338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enable: 1
-  camYAmplitude: 0.0077
-  camXAmplitude: 0.0034
-  frequency: 11.8
+  camYAmplitude: 0.00295
+  camXAmplitude: 0.00241
+  frequency: 14.6
   camera: {fileID: 655622084045267179}
   cameraHolder: {fileID: 5463386490162281571}
 --- !u!114 &7361942445208917943
@@ -383,7 +383,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4511646621381878485}
   - component: {fileID: 7123934664795770557}
-  - component: {fileID: 57819254487623880}
   - component: {fileID: 3772591952792984564}
   - component: {fileID: 8632711328203785454}
   m_Layer: 3
@@ -459,14 +458,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &57819254487623880
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159445715621049718}
-  m_Enabled: 1
 --- !u!114 &3772591952792984564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,7 +685,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

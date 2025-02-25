@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerHeadBob : MonoBehaviour
 {
     [SerializeField] private bool enable = true;
-    [SerializeField, Range(0, 0.1f)] private float camYAmplitude = 0.015f;
-    [SerializeField, Range(0, 0.1f)] private float camXAmplitude = 0.015f;
+    [SerializeField, Range(0, 0.01f)] private float camYAmplitude = 0.015f;
+    [SerializeField, Range(0, 0.01f)] private float camXAmplitude = 0.015f;
     [SerializeField, Range(0, 30)] private float frequency = 10f;
     private float sprintMulitplier = 1.5f;
 
