@@ -47,6 +47,34 @@ MonoBehaviour:
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &-6650195347242425868
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  postExposure:
+    m_OverrideState: 1
+    m_Value: 0.45
+  contrast:
+    m_OverrideState: 1
+    m_Value: -2.3
+  colorFilter:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0.5698192, b: 0.4009434, a: 1}
+  hueShift:
+    m_OverrideState: 0
+    m_Value: -159
+  saturation:
+    m_OverrideState: 1
+    m_Value: -12.4
 --- !u!114 &-6506401795018311122
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -59,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   color:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
@@ -402,7 +430,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: ExteriorVolumeProfile
+  m_Name: Test Volume Profile
   m_EditorClassIdentifier: 
   components:
   - {fileID: -1466761267653633781}
@@ -413,6 +441,7 @@ MonoBehaviour:
   - {fileID: -2318921382062028776}
   - {fileID: -8584462365995947345}
   - {fileID: 1348454240813299914}
+  - {fileID: -6650195347242425868}
 --- !u!114 &1348454240813299914
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -441,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
   m_Name: FilmGrain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   type:
     m_OverrideState: 1
     m_Value: 0
@@ -466,13 +495,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9526938, z: 0.94437736, w: 0}
+    m_Value: {x: 0.9507527, y: 0.9972359, z: 1, w: 0}
   gamma:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 0.98364145, z: 0.9959103, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9556544, z: 0.93598574, w: 0}
   gain:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 0.9682832, z: 0.8340542, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9885389, z: 0.9385207, w: 0}
