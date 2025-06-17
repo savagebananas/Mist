@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class FollowPlayer : State
 {
@@ -15,6 +16,9 @@ public class FollowPlayer : State
     // Animation
     Animator animator;
 
+    // Audio
+    AudioSource audioSource;
+
     // Next state
     [SerializeField] State idleState;
     [SerializeField] State meleeAttackState;
@@ -24,6 +28,7 @@ public class FollowPlayer : State
         enemy = parent.GetComponent<EnemyBase>();
         agent = parent.GetComponent<NavMeshAgent>();
         animator = parent.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         player = PlayerManager.instance.player;
     }
 
@@ -31,6 +36,7 @@ public class FollowPlayer : State
     {
         agent.isStopped = false; // allow movement
         animator.SetTrigger("run");
+        audioSource.Play();
     }
 
     public override void OnUpdate()
@@ -40,10 +46,19 @@ public class FollowPlayer : State
         var distanceFromPlayer = Vector3.Distance(enemy.transform.position, player.transform.position);
 
         // Attack player when close
-        if (distanceFromPlayer <= attackDistance) stateMachine.SetNewState(meleeAttackState);
+        if (distanceFromPlayer <= attackDistance)
+        {
+            audioSource.Stop();
+            stateMachine.SetNewState(meleeAttackState);
+        }
 
         // Idle when too far away
-        else if (distanceFromPlayer > aggroDistance) stateMachine.SetNewState(idleState);
+        else if (distanceFromPlayer > aggroDistance)
+        {
+            audioSource.Stop();
+            stateMachine.SetNewState(idleState);
+        }
+
 
     }
 }

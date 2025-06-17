@@ -30,6 +30,7 @@ public class Idle : State
     public override void OnStart()
     {
         animator.SetTrigger("idle");
+        agent.isStopped = true;
     }
 
     public override void OnUpdate()
