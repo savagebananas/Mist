@@ -16,6 +16,7 @@ public class PlayerEquip : MonoBehaviour
 
     private GameObject equippedItem;
     private ItemData equippedItemData;
+    private IEquippable currentIEquippable;
     private int equippedIndex = -1;
 
     private void Awake()
@@ -36,6 +37,7 @@ public class PlayerEquip : MonoBehaviour
             equippedItem = null;
             equippedItemData = null;
             equippedIndex = index;
+            currentIEquippable = null;
             return;
         }
 
@@ -44,6 +46,7 @@ public class PlayerEquip : MonoBehaviour
         equippedItem = equippable;
         equippedItemData = inventoryHotbar.iSlots[index].itemData;
         equippedIndex = index;
+        currentIEquippable = equippedItem.GetComponent<IEquippable>();
     }
     
     /// <summary>
@@ -86,11 +89,23 @@ public class PlayerEquip : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when player starts holding down the use item button
+    /// </summary>
     public void UseItem()
+    {
+        if (equippedItem == null) return;
+        currentIEquippable.UseItem();
+    }
+
+    /// <summary>
+    /// Called when player stops holding down the use item button
+    /// </summary>
+    public void StopUseItem()
     {
         if (equippedItem == null) return;
 
         IEquippable item = equippedItem.GetComponent<IEquippable>();
-        item.UseItem();
+        item.StopUseItem();
     }
 }

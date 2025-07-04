@@ -33,9 +33,13 @@ public class MeleeWeapon : MonoBehaviour, IEquippable
     public void UseItem()
     {
         // Animate Swing
-        Debug.Log("Swing ");
+        Debug.Log("Swing");
         Attack();
+    }
 
+    public void StopUseItem()
+    {
+        Debug.Log("Stop swinging");
     }
 
     private void Attack()

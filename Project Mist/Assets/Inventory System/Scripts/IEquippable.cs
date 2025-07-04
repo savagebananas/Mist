@@ -6,4 +6,6 @@ public interface IEquippable
 {
     public void UseItem();
 
+    public void StopUseItem();
+
 }

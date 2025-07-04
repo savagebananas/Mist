@@ -1,9 +1,10 @@
-using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 
+/// <summary>
+/// Keeps track of player input and connects it to other classes
+/// </summary>
 [RequireComponent(typeof(PlayerInteractor), typeof(PlayerEquip), typeof(PlayerMovement))]
 public class PlayerInput : MonoBehaviour
 {
@@ -58,8 +59,6 @@ public class PlayerInput : MonoBehaviour
 
         lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
         lookAction.canceled += context => lookInput = Vector2.zero;
-
-
     }
 
     private void OnEnable()
@@ -77,11 +76,13 @@ public class PlayerInput : MonoBehaviour
         dropItemAction.Enable();
         useItemAction.Enable();
 
-        interactAction.started += Interact;
+        interactAction.performed += Interact;
         equipAction.performed += Equip;
-        inventoryAction.started += Inventory;
-        dropItemAction.started += DropItem;
+        inventoryAction.performed += Inventory;
+        dropItemAction.performed += DropItem;
         useItemAction.started += UseItem;
+        useItemAction.canceled += StopUseItem;
+
     }
 
     private void OnDisable()
@@ -167,5 +168,12 @@ public class PlayerInput : MonoBehaviour
         
         //muzzleFlash.Flash();
         playerEquip.UseItem();
+    }
+
+    private void StopUseItem(InputAction.CallbackContext context)
+    {
+        if (!active) return;
+
+        playerEquip.StopUseItem();
     }
 }

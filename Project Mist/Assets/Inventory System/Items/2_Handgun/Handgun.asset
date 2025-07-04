@@ -17,5 +17,5 @@ MonoBehaviour:
   description: 
   maxStackSize: 1
   itemImage: {fileID: 0}
-  droppedItem: {fileID: 0}
-  equippedItem: {fileID: 0}
+  droppedItem: {fileID: 3687528494695031418, guid: b8ed19c08ced79c4ebba77f9c2977497, type: 3}
+  equippedItem: {fileID: 4736589979690654724, guid: e2c18e4f3e5ccd74cb28e006923cee3d, type: 3}

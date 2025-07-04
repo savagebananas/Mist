@@ -1,4 +1,3 @@
-using ExternPropertyAttributes;
 using UnityEngine;
 using UnityEngine.AI;
 

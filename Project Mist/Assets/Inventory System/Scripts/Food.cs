@@ -12,6 +12,11 @@ public class Food : MonoBehaviour, IEquippable
         Debug.Log("Eat ");
     }
 
+    public void StopUseItem()
+    {
+
+    }
+
     public void DropItem(InventoryData hotbar, ItemSpawnManager itemSpawnManager)
     {
         throw new System.NotImplementedException();
