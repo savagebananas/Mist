@@ -27,11 +27,11 @@ public class MeleeAttack : State
         enemy = parent.GetComponent<EnemyBase>();
         agent = parent.GetComponent<NavMeshAgent>();
         animator = parent.GetComponent<Animator>();
-        player = PlayerManager.instance.player;
     }
 
     public override void OnStart()
     {
+        player = PlayerManager.instance.player;
         agent.isStopped = true; // stop moving
         animator.SetTrigger("attack"); // swing animation
         Invoke(nameof(DamageTick), attackAnimation.length / 2); // damage after half the time

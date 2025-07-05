@@ -306,8 +306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enable: 1
-  camYAmplitude: 0.00295
-  camXAmplitude: 0.00241
+  camYAmplitude: 0.00388
+  camXAmplitude: 0.00275
   frequency: 14.6
   camera: {fileID: 655622084045267179}
   cameraHolder: {fileID: 5463386490162281571}

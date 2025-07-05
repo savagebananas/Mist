@@ -1,16 +1,18 @@
-using Unity.Cinemachine;
+using System.Collections;
 using UnityEngine;
 
 public class MuzzleFlash : MonoBehaviour
 {
     [SerializeField] Light light;
     [SerializeField] float intensity;
+    [SerializeField] float intensityRandomization;
     [SerializeField] [Range(5f, 100f)] float range;
     [SerializeField] [Range(0.01f, 0.25f)] float duration;
 
     private void Awake()
     {
         light.range = range;
+        light.intensity = intensity;
     }
 
     private void Start()
@@ -18,18 +20,11 @@ public class MuzzleFlash : MonoBehaviour
         light.enabled = false;
     }
 
-    public void Flash()
+    public IEnumerator Flash()
     {
-        if (light == null) return;
-
+        light.intensity = Random.Range(intensity - intensityRandomization, intensity + intensityRandomization);
         light.enabled = true;
-        light.intensity = intensity;
-        Invoke(nameof(HideLight), duration);
-    }
-
-    private void HideLight()
-    {
-        light.intensity = 0;
+        yield return new WaitForSeconds(duration);
         light.enabled = false;
     }
 }

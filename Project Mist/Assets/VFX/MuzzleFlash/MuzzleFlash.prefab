@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1980044470073279288}
   - component: {fileID: 7550703013329935334}
   - component: {fileID: 7857353586899082223}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 0.92957336, b: 0.4433961, a: 1}
-  m_Intensity: 5
-  m_Range: 50
+  m_Color: {r: 0.9254902, g: 0.76031464, b: 0.17647056, a: 1}
+  m_Intensity: 0.5
+  m_Range: 40
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light: {fileID: 1980044470073279288}
-  intensity: 5
+  intensity: 0.5
+  intensityRandomization: 0.2
   range: 50
-  duration: 0.25
+  duration: 0.1

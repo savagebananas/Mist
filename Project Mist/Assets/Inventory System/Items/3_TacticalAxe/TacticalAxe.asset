@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83bb6fd8092b14548bd95051255e56c7, type: 3}
-  m_Name: Tactical Axe
+  m_Name: TacticalAxe
   m_EditorClassIdentifier: 
   id: 3
   name: Tactical Axe

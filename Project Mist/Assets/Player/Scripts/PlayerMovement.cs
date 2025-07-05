@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool GetIsWalking()
     {
-        return isWalking;
+        return isWalking && controller.velocity.magnitude > 0.05f;
     }
 
     public bool GetIsSprinting()

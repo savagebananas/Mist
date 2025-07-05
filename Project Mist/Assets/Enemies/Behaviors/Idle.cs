@@ -24,11 +24,11 @@ public class Idle : State
         enemy = parent.GetComponent<EnemyBase>();
         agent = parent.GetComponent<NavMeshAgent>();
         animator = parent.GetComponent<Animator>();
-        player = PlayerManager.instance.player;
     }
 
     public override void OnStart()
     {
+        player = PlayerManager.instance.player;
         animator.SetTrigger("idle");
         agent.isStopped = true;
     }

@@ -29,11 +29,11 @@ public class FollowPlayer : State
         agent = parent.GetComponent<NavMeshAgent>();
         animator = parent.GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        player = PlayerManager.instance.player;
     }
 
     public override void OnStart()
     {
+        player = PlayerManager.instance.player;
         agent.isStopped = false; // allow movement
         animator.SetTrigger("run");
         audioSource.Play();

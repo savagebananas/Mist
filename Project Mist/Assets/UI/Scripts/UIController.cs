@@ -8,12 +8,15 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
+        // Initialize all inventory UI (main inventory and hotbar)
         InventoryUI[] inventoryUIs = inventoryCanvas.GetComponentsInChildren<InventoryUI>();
         foreach (InventoryUI i in inventoryUIs)
         {
             i.InitializeUI();
         }
     }
+
+    #region Inventory UI
 
     /// <summary>
     /// Turns on/off inventory UI
@@ -38,4 +41,6 @@ public class UIController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         inventoryCanvas.SetActive(false);
     }
+    
+    #endregion
 }

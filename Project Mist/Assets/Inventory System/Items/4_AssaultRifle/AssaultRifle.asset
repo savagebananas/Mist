@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83bb6fd8092b14548bd95051255e56c7, type: 3}
+  m_Name: AssaultRifle
+  m_EditorClassIdentifier: 
+  id: 4
+  name: Assualt Rifle
+  description: 
+  maxStackSize: 1
+  itemImage: {fileID: 0}
+  droppedItem: {fileID: 1650362315555716607, guid: ed03f2c5a058a4f42b607da7732b2372, type: 3}
+  equippedItem: {fileID: 11339050756780084, guid: a61487fc9922ff341b5c671ddf8e2fcc, type: 3}
