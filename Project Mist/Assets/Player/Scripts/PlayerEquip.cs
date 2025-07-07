@@ -108,4 +108,14 @@ public class PlayerEquip : MonoBehaviour
         IEquippable item = equippedItem.GetComponent<IEquippable>();
         item.StopUseItem();
     }
+
+    public InventoryData GetMainInventory()
+    {
+        return inventoryMain;
+    }
+
+    public InventoryData GetHotbarInventory()
+    {
+        return inventoryHotbar;
+    }
 }

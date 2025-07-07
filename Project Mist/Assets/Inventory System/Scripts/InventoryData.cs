@@ -1,5 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,9 +10,9 @@ public class InventoryData : ScriptableObject
 
     public UnityEvent OnInventoryChanged;
 
-    public void AddToInventory(ItemData item, int amountToAdd)
+    public void AddToInventory(ItemData item, int amountToAdd, out int amountRemaining)
     {
-        int amt = amountToAdd;
+        amountRemaining = amountToAdd;
         int maxStackSize = item.maxStackSize;
 
         // Find all matching items in inventory
@@ -23,22 +21,24 @@ public class InventoryData : ScriptableObject
             // There is a matching item
             if (iSlots[i].itemData == item)
             {
-                iSlots[i].AddAmount(amt, out int remaining);
+                iSlots[i].AddAmount(amountRemaining, out int remaining);
 
                 if (remaining == 0)
                 {
+                    amountRemaining = 0;
                     OnInventoryChanged.Invoke();
                     return;
                 }
-                amt = remaining;
+                amountRemaining = remaining;
             }
         }
 
         // Find Empty Slot
         for (int i = 0; i < iSlots.Count; i++)
         {
-            if (amt <= 0)
+            if (amountRemaining <= 0)
             {
+                amountRemaining = 0;
                 OnInventoryChanged.Invoke(); // Call event
                 return;
             }
@@ -47,19 +47,20 @@ public class InventoryData : ScriptableObject
             if (iSlots[i].itemData == null)
             {
                 iSlots[i].itemData = item;
-                iSlots[i].AddAmount(amt, out int remaining);
+                iSlots[i].AddAmount(amountRemaining, out int remaining);
                 
                 if (remaining == 0)
                 {
+                    amountRemaining = 0;
                     OnInventoryChanged.Invoke();
                     return;
                 }
 
-                amt = remaining;
+                amountRemaining = remaining;
             }
-        }
 
-        Debug.LogError("Inventory Full, Can't add " + amt + " of " + item.name);
+            OnInventoryChanged.Invoke();
+        }
     }
 
     public void RemoveFromInventory(InventorySlot slot)

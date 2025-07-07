@@ -18,7 +18,11 @@ public class PlayerInteractor : MonoBehaviour
         if (!selectionManager.HasSelectedObject()) return;
 
         IInteractable interactable = selectionManager.GetSelectedObject().GetComponent<IInteractable>();
-        if (interactable == null) Debug.LogError("Selected Object has no IInteractable!");
+        if (interactable == null)
+        {
+            Debug.LogError("Selected Object has no IInteractable!");
+            return;
+        }
 
         interactable.OnInteract(this);
     }

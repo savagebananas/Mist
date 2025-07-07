@@ -15,10 +15,10 @@ MonoBehaviour:
   iSlots:
   - itemData: {fileID: 11400000, guid: 935c8cf36d35402469b6cd74eb4ff431, type: 2}
     quantity: 5
+  - itemData: {fileID: 0}
+    quantity: 0
   - itemData: {fileID: 11400000, guid: 935c8cf36d35402469b6cd74eb4ff431, type: 2}
     quantity: 5
-  - itemData: {fileID: 11400000, guid: 935c8cf36d35402469b6cd74eb4ff431, type: 2}
-    quantity: 1
   - itemData: {fileID: 0}
     quantity: 0
   - itemData: {fileID: 0}

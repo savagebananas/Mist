@@ -5552,6 +5552,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7081742657489475415, guid: fcd4a09e59f6d9c4b98d6a1cef3b3034, type: 3}
+      propertyPath: quantity
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7422904164606252840, guid: fcd4a09e59f6d9c4b98d6a1cef3b3034, type: 3}
       propertyPath: m_Name
       value: Apple_Dropped (2)
@@ -6216,6 +6220,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7081742657489475415, guid: fcd4a09e59f6d9c4b98d6a1cef3b3034, type: 3}
+      propertyPath: quantity
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7422904164606252840, guid: fcd4a09e59f6d9c4b98d6a1cef3b3034, type: 3}
       propertyPath: m_Name
       value: Apple_Dropped (1)
@@ -8351,6 +8359,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7081742657489475415, guid: fcd4a09e59f6d9c4b98d6a1cef3b3034, type: 3}
+      propertyPath: quantity
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7422904164606252840, guid: fcd4a09e59f6d9c4b98d6a1cef3b3034, type: 3}
       propertyPath: m_Name
       value: Apple_Dropped
