@@ -293,6 +293,8 @@ MonoBehaviour:
   inventoryHotbar: {fileID: 11400000, guid: 77fad415e11c1ca4e8f450fa3ccdcf59, type: 2}
   inventoryMain: {fileID: 11400000, guid: 08326ec1f307ef142a32cd8b0045a2ba, type: 2}
   hands: {fileID: 8879623167310530957}
+  dropTransform1: {fileID: 8225700269455293063}
+  dropTransform2: {fileID: 7022145563986903068}
 --- !u!114 &7793376461418150329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,8 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enable: 1
-  camYAmplitude: 0.00388
-  camXAmplitude: 0.00275
+  camYAmplitude: 0.00314
+  camXAmplitude: 0.00243
   frequency: 14.6
   camera: {fileID: 655622084045267179}
   cameraHolder: {fileID: 5463386490162281571}
@@ -947,13 +949,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5518191874884540406}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0010477627, y: 0.0010466661, z: 0.0005224636, w: 0.9999988}
-  m_LocalPosition: {x: -2.5, y: -2.5, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8879623167310530957}
-  m_LocalEulerAnglesHint: {x: 0.12, y: 0.12, z: 0.06}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6008747022806099288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1031,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8225700269455293063}
+  - {fileID: 7022145563986903068}
   m_Father: {fileID: 655622084045267179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6807859061404230673
@@ -1095,6 +1098,37 @@ Transform:
   - {fileID: 6516510509607323424}
   - {fileID: 4613019176946783010}
   m_Father: {fileID: 3398125344996420050}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8828957179133236409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7022145563986903068}
+  m_Layer: 3
+  m_Name: DropItemPosition2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7022145563986903068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8828957179133236409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8879623167310530957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6880317606182507927
 PrefabInstance:

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Transactions;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 /// <summary>
 /// Keeps track of current interactable which the player is looking at

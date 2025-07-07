@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +12,7 @@ public class PlayerEquip : MonoBehaviour
     [SerializeField] private InventoryData inventoryMain;
 
     [SerializeField] private Transform hands;
+    [SerializeField] private Transform dropTransform;
 
     private GameObject equippedItem;
     private ItemData equippedItemData;
@@ -36,7 +36,7 @@ public class PlayerEquip : MonoBehaviour
         {
             equippedItem = null;
             equippedItemData = null;
-            equippedIndex = index;
+            equippedIndex = -1;
             currentIEquippable = null;
             return;
         }
@@ -48,7 +48,7 @@ public class PlayerEquip : MonoBehaviour
         equippedIndex = index;
         currentIEquippable = equippedItem.GetComponent<IEquippable>();
     }
-    
+
     /// <summary>
     /// Called when the hotbar inventory has changed (Ex: item is removed)
     /// </summary>
@@ -79,8 +79,11 @@ public class PlayerEquip : MonoBehaviour
         if (equippedItem != null)
         {
             // Generate physical item in the world, set itemData 
-            var obj = Instantiate(equippedItemData.droppedItem, transform.position, Quaternion.identity);
+            var obj = Instantiate(equippedItemData.droppedItem, hands.position, Quaternion.identity);
             obj.GetComponent<DroppedItem>().SetQuantity(inventoryHotbar.iSlots[equippedIndex].quantity);
+            Vector3 dir = Vector3.Normalize(dropTransform.position - hands.position);
+            obj.transform.rotation = equippedItem.transform.rotation;
+            obj.GetComponent<Rigidbody>().AddForce(dir * 4f, ForceMode.Impulse);
 
             // Remove from inventory and destroy equipped item
             inventoryHotbar.RemoveFromInventory(equippedIndex);

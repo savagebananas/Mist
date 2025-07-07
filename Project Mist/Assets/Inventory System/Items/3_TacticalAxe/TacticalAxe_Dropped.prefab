@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 4054403902742936742}
   - component: {fileID: -8715033852253154692}
   - component: {fileID: 5679887399428798267}
+  - component: {fileID: 6895524104337179736}
   m_Layer: 7
   m_Name: TacticalAxe_Dropped
   m_TagString: Interactable
@@ -233,8 +234,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.25769258, y: 0.57898974, z: 0.055958606}
-  m_Center: {x: -0.019855917, y: 0.28992897, z: 0.0009204028}
+  m_Size: {x: 0.25769258, y: 0.21767235, z: 0.02}
+  m_Center: {x: -0.019855917, y: 0.47058767, z: 0}
+--- !u!65 &6895524104337179736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4684951679471522414}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.047099724, y: 0.35327366, z: 0.02}
+  m_Center: {x: 0.0015669167, y: 0.17621209, z: 0}
 --- !u!1 &5140956113568691391
 GameObject:
   m_ObjectHideFlags: 0
