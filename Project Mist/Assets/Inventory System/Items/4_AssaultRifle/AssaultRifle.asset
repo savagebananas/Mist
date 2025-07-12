@@ -16,6 +16,6 @@ MonoBehaviour:
   name: Assualt Rifle
   description: 
   maxStackSize: 1
-  itemImage: {fileID: 0}
+  itemImage: {fileID: -577405837, guid: 49daf3fc13633b34886c8867d6a5ce7c, type: 3}
   droppedItem: {fileID: 1650362315555716607, guid: ed03f2c5a058a4f42b607da7732b2372, type: 3}
   equippedItem: {fileID: 11339050756780084, guid: a61487fc9922ff341b5c671ddf8e2fcc, type: 3}

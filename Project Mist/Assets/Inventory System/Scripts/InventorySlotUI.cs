@@ -40,7 +40,8 @@ public class InventorySlotUI : MonoBehaviour
         // Visuals
         itemSprite.color = Color.white;
         itemSprite.sprite = slot.itemData.itemImage;
-        itemCountText.text = slot.quantity.ToString();
+
+        if (slot.quantity > 1) itemCountText.text = slot.quantity.ToString();
     }
 
     public void ClearSlotVisuals()

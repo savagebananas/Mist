@@ -16,6 +16,6 @@ MonoBehaviour:
   name: Apple
   description: 
   maxStackSize: 5
-  itemImage: {fileID: 21300000, guid: 3a8c21230d8f09648931888ed1fbd707, type: 3}
+  itemImage: {fileID: 21300000, guid: f2d6b8000071a134db20ffa74a1b912c, type: 3}
   droppedItem: {fileID: 7422904164606252840, guid: fcd4a09e59f6d9c4b98d6a1cef3b3034, type: 3}
   equippedItem: {fileID: 6708396406859154831, guid: 84e284c0c90964b45a27254b8dbf4827, type: 3}
