@@ -857,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 8868502642061526104}
   parent: {fileID: 5523022008029497662}
-  aggroDistance: 15
+  aggroDistance: 20
   attackDistance: 2
   idleState: {fileID: 6585858951383137546}
   meleeAttackState: {fileID: 6949187435351262658}
@@ -1963,7 +1963,8 @@ GameObject:
   - component: {fileID: 7681252040565872384}
   - component: {fileID: 9099442178785347993}
   - component: {fileID: 4637800027560218065}
-  m_Layer: 0
+  - component: {fileID: 7962100543840136569}
+  m_Layer: 8
   m_Name: Runner Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2070,6 +2071,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!54 &7962100543840136569
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5523022008029497662}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5562445046730520498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 8868502642061526104}
   parent: {fileID: 5523022008029497662}
-  aggroDistance: 10
+  aggroDistance: 20
   attackDistance: 2
   followPlayer: {fileID: 4016087535613626148}
   meleeAttackState: {fileID: 6949187435351262658}

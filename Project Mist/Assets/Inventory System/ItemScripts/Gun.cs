@@ -7,6 +7,9 @@ public class Gun : MonoBehaviour, IEquippable
     [SerializeField] enum FireMode { SemiAuto, Automatic, Burst }
     [SerializeField] FireMode fireMode = FireMode.SemiAuto;
 
+    [SerializeField] Transform firePoint;
+    [SerializeField] LayerMask mask;
+
     [Header("Fire Settings")]
     [SerializeField] float fireRate = 0.1f; // Time between shots
     [SerializeField] int burstCount = 3;
@@ -23,14 +26,17 @@ public class Gun : MonoBehaviour, IEquippable
     [SerializeField] AudioClip fireSfx;
     [SerializeField] AudioClip reloadSfx;
     [SerializeField] float firePitchRandomization;   
-    [SerializeField] MuzzleFlash muzzleFlash;
-
+    [SerializeField] MuzzleFlash muzzleFlashLight;
+    [SerializeField] ParticleSystem muzzleFlashParticles;
+    [SerializeField] TrailRenderer bulletTrail;
 
     private int currentAmmo;
     private bool isFiring = false;
     private bool isReloading = false;
     private float lastFireTime;
     private Coroutine burstCoroutine;
+
+    private PlayerManager playerManager;
 
     void Start()
     {
@@ -78,6 +84,8 @@ public class Gun : MonoBehaviour, IEquippable
                 TryFire();
             }
         }
+
+
     }
 
     void TryFire()
@@ -99,13 +107,35 @@ public class Gun : MonoBehaviour, IEquippable
         lastFireTime = Time.time;
         currentAmmo--;
 
-        // TODO: raycast and damage
+        // raycast and damage
+        Vector3 direction = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)).direction;
 
-        // Effects
-        StartCoroutine(muzzleFlash.Flash());
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out RaycastHit hit, 500, mask))
+        {
+            Vector3 dir = hit.point - firePoint.position;
+
+            if (hit.collider.gameObject.TryGetComponent<EnemyBase>(out EnemyBase enemy))
+            {
+                Debug.Log("enemy hit");
+            }            
+        }
+
+        /*
+        var trail = Instantiate(bulletTrail, firePoint.position, Quaternion.LookRotation(hit.normal));
+        StartCoroutine(SpawnTrail(trail, hit));
+        */
+
+        // Visual Effects
+        StartCoroutine(muzzleFlashLight.Flash());
+        muzzleFlashParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear); 
+        muzzleFlashParticles.Play();
+
+        // Sound Effects
         animator.SetTrigger("shoot");
         audioSource.pitch = Random.Range(1 - firePitchRandomization, 1 + firePitchRandomization);
         audioSource.PlayOneShot(fireSfx);
+
+
     }
 
     IEnumerator BurstFire()
@@ -150,7 +180,28 @@ public class Gun : MonoBehaviour, IEquippable
         currentAmmo += ammoToReload;
         totalAmmo -= ammoToReload;
 
-        Debug.Log("Reload complete. Ammo: " + currentAmmo + " | Reserve: " + totalAmmo);
         isReloading = false;
+    }
+
+    private IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
+    {
+        float time = 0;
+        Vector3 startPosition = trail.transform.position;
+
+        while (time < 0.1f)
+        {
+            trail.transform.position = Vector3.Lerp(startPosition, hit.point, time);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(trail.gameObject, trail.time);
+
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(firePoint.position, 0.015f);
     }
 }

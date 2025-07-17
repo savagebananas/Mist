@@ -14,6 +14,8 @@ public class MeleeAttack : State
     EnemyBase enemy;
     NavMeshAgent agent;
     GameObject player;
+    Vector3 playerPos;
+    Quaternion lookRotation;
 
     // Animation
     Animator animator;
@@ -32,13 +34,21 @@ public class MeleeAttack : State
     public override void OnStart()
     {
         player = PlayerManager.instance.player;
+
         agent.isStopped = true; // stop moving
         animator.SetTrigger("attack"); // swing animation
         Invoke(nameof(DamageTick), attackAnimation.length / 2); // damage after half the time
         Invoke(nameof(TransitionToIdleState), attackAnimation.length); // switch states after animation ends
     }
 
-    public override void OnUpdate() { }
+    public override void OnUpdate() 
+    {
+        playerPos = player.transform.position;
+        Vector3 dir = (playerPos - enemy.transform.position).normalized;
+        dir.y = 0;
+        Quaternion targetRot = Quaternion.LookRotation(dir);
+        enemy.transform.rotation = Quaternion.RotateTowards(enemy.transform.rotation, targetRot, Time.deltaTime * (360f / 1f));
+    }
 
     private void DamageTick()
     {

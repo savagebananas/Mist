@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3620098201178672556}
   - component: {fileID: 8387729503606520541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PT_Generic_Rock_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4140774597986965270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -73,7 +73,8 @@ GameObject:
   - component: {fileID: 2410657515239051217}
   - component: {fileID: 4328566817098671277}
   - component: {fileID: 31718447998784673}
-  m_Layer: 0
+  - component: {fileID: 3007773197004257503}
+  m_Layer: 6
   m_Name: PT_Generic_Rock_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,6 +149,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3007773197004257503
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5215970427928307999}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3282209725294213285, guid: f226223b3a11d2d4b980aaa520301583, type: 3}
 --- !u!1 &7126759119823987389
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +182,8 @@ GameObject:
   - component: {fileID: 45626752551149192}
   - component: {fileID: 6244462071409904346}
   - component: {fileID: 1950198989058679553}
-  m_Layer: 0
+  - component: {fileID: 6906489442261484705}
+  m_Layer: 6
   m_Name: PT_Generic_Rock_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,6 +258,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6906489442261484705
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7126759119823987389}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2253944659315782737, guid: f226223b3a11d2d4b980aaa520301583, type: 3}
 --- !u!1 &8632384800496054581
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +291,8 @@ GameObject:
   - component: {fileID: 4838893804519224432}
   - component: {fileID: 3528726361081146884}
   - component: {fileID: 4901771407451701469}
-  m_Layer: 0
+  - component: {fileID: 9011555236758491392}
+  m_Layer: 6
   m_Name: PT_Generic_Rock_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,3 +367,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9011555236758491392
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632384800496054581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4657891268570775739, guid: f226223b3a11d2d4b980aaa520301583, type: 3}

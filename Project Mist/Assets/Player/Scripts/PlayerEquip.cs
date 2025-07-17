@@ -31,7 +31,7 @@ public class PlayerEquip : MonoBehaviour
         // Destroy existing equipped item
         if (equippedItem != null) GameObject.Destroy(equippedItem);
 
-        // If equipped slot is empty, pull out hands
+        // If equipped slot is empty, do nothing
         if (inventoryHotbar.iSlots[index].itemData == null)
         {
             equippedItem = null;

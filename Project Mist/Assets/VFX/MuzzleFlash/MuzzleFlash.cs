@@ -6,7 +6,7 @@ public class MuzzleFlash : MonoBehaviour
     [SerializeField] Light light;
     [SerializeField] float intensity;
     [SerializeField] float intensityRandomization;
-    [SerializeField] [Range(5f, 100f)] float range;
+    [SerializeField] [Range(5f, 500f)] float range;
     [SerializeField] [Range(0.01f, 0.25f)] float duration;
 
     private void Awake()
