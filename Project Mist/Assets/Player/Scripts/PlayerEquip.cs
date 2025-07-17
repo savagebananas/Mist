@@ -19,8 +19,11 @@ public class PlayerEquip : MonoBehaviour
     private IEquippable currentIEquippable;
     private int equippedIndex = -1;
 
+    public static PlayerEquip instance;
+
     private void Awake()
     {
+        instance = this;
         inventoryHotbar.OnInventoryChanged.AddListener(OnHotbarUpdate);
     }
 
@@ -90,6 +93,16 @@ public class PlayerEquip : MonoBehaviour
             equippedIndex = -1;
             DestroyEquipped();
         }
+    }
+
+    public void DropItem(ItemData itemData, int amt)
+    {
+        // Generate physical item in the world, set itemData 
+        var obj = Instantiate(itemData.droppedItem, hands.position, Quaternion.identity);
+        obj.GetComponent<DroppedItem>().SetQuantity(amt);
+
+        Vector3 dir = Vector3.Normalize(dropTransform.position - hands.position);
+        obj.GetComponent<Rigidbody>().AddForce(dir * 4f, ForceMode.Impulse);
     }
 
     /// <summary>

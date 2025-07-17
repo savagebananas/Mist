@@ -20,6 +20,14 @@ public class InventoryMouseSlotUI : MonoBehaviour
 
     public PlayerEquip playerEquip;
 
+    private void Start()
+    {
+        // Clear visuals
+        itemSprite.color = Color.clear;
+        itemSprite.sprite = null;
+        itemCountText.text = "";
+    }
+
     private void Update()
     {
 
@@ -34,7 +42,8 @@ public class InventoryMouseSlotUI : MonoBehaviour
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 // Drop item
-                ItemSpawnManager.instance.SpawnItemOnPlayer(itemData, quantity);
+                //ItemSpawnManager.instance.SpawnItemOnPlayer(itemData, quantity);
+                PlayerEquip.instance.DropItem(itemData, quantity);
                 //playerEquip.DestroyEquipped();
                 Clear();
             }
@@ -99,7 +108,7 @@ public class InventoryMouseSlotUI : MonoBehaviour
         {
             itemSprite.color = Color.white;
             itemSprite.sprite = itemData.itemImage;
-            itemCountText.text = quantity.ToString();
+            if (quantity > 1) itemCountText.text = quantity.ToString();
         }
     }
 }

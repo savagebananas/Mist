@@ -125,17 +125,15 @@ public class Gun : MonoBehaviour, IEquippable
         StartCoroutine(SpawnTrail(trail, hit));
         */
 
-        // Visual Effects
-        StartCoroutine(muzzleFlashLight.Flash());
-        muzzleFlashParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear); 
-        muzzleFlashParticles.Play();
-
         // Sound Effects
         animator.SetTrigger("shoot");
         audioSource.pitch = Random.Range(1 - firePitchRandomization, 1 + firePitchRandomization);
         audioSource.PlayOneShot(fireSfx);
 
-
+        // Visual Effects
+        StartCoroutine(muzzleFlashLight.Flash());
+        muzzleFlashParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear); 
+        muzzleFlashParticles.Play();
     }
 
     IEnumerator BurstFire()
